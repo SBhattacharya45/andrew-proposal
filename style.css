@@ -1276,3 +1276,20 @@ padding-bottom: 15px;
     right: 90px;
     width: 56px;
 }
+
+.tradButton {
+  padding: 5px 10px;
+  background: #902925;
+  border-radius: 10px;
+  border: 0;
+  color: #fff;
+  margin-right: 15px;
+}
+
+.cleanButton {
+  padding: 5px 10px;
+  background: #2c5d34;
+  border-radius: 10px;
+  border: 0;
+  color: #fff;
+}
