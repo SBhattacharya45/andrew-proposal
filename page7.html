@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title> ppt</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, user-scalable=1, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="https://codepen.io/grayghostvisuals/pen/a08e0d79c150ff5030f9b6afaa137749.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container-fluid page8 sunslide">
+      <div class="row">
+        <div class="col-lg-12 page8mainheading">
+          <h2>which would you choose?</h2>
+          <p >Choose one of the options to see the trend over the years.</p>
+        </div>
+        <div class="col-lg-6 page8left">
+          <div class="">
+            <video autoplay muted loop id="myVideo">
+              <source src="images/dirty_energy.mov" type="video/mp4">
+              <source src="images/dirty_energy.mov" type="video/ogg">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="col-lg-12">
+            <h2>Traditional Power</h2>
+          </div>
+          <div class="col-lg-12 page8leftmiddle">
+            <div class="col-lg-5"></div>
+            <div class="col-lg-2">
+            </div>
+            <div class="col-lg-5"></div>
+          </div>
+          <div class="col-lg-12 page8leftbottom">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8">
+              <a href="#" data-toggle="modal" data-target="#char1" data-dismiss="modal" id="p1">
+              <img src="images/p8left.png" class="img-responsive center-block" />
+              </a>
+            </div>
+            <div class="col-lg-2"></div>
+          </div>
+        </div>
+        <div class="col-lg-6 page8right">
+          <div class="col-lg-12">
+            <h2>CLEAN ENERGY</h2>
+          </div>
+          <div class="col-lg-12 page8leftmiddle">
+            <div class="col-lg-5"></div>
+            <div class="col-lg-2">
+            </div>
+            <div class="col-lg-5"></div>
+          </div>
+          <div class="col-lg-12 page8rightbottom">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8">
+              <a href="#" data-toggle="modal" data-target="#char2" data-dismiss="modal" id="p2">
+              <img src="images/p8right.png" class="img-responsive center-block" />
+              </a>
+            </div>
+            <div class="col-lg-2"></div>
+          </div>
+        </div>
+        <div class="modal fade" id="char1" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="">
+                <h2>Estimated Electricity Charges Over Time</h2>
+                <div class="line-chart col-lg-12">
+                  <div class="aspect-ratio">
+                    <canvas id="chart1"></canvas>
+                  </div>
+                </div>
+                <p>For a $200/month electric bill with a 4% inflation rate</p>
+              </div>
+              <div class="modal-footer">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="char2" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="">
+                <h2>Estimated Electricity Charges Over Time</h2>
+                <div class="line-chart col-lg-12">
+                  <div class="aspect-ratio">
+                    <canvas id="chart2"></canvas>
+                  </div>
+                </div>
+                <p>For a $200/month electric bill with a 4% inflation rate</p>
+              </div>
+              <div class="modal-footer">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid backicon">
+      <div class="container text-center">
+        <div class="row" >
+          <a href="page6.html" id="leftPicture" class="arrow-leftright"><img src="images/back.png" class="img-responsive backpp"/></a>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid nexticon">
+      <div class="container text-center">
+        <div class="row">
+          <a href="page8.html"id="rightPicture" class="arrow-leftright"><img src="images/nicon.png" class="img-responsive nextpp" /></a>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    $("#p1").click(function() {
+        $('#char2').modal('hide');
+        showPopup2 = true;
+    });
+    $("#p2").click(function() {
+        $('#char1').modal('hide');
+        showPopup2 = true;
+    });
+  </script>
+    <script src="js/chart.js"></script>
+        <script src="js/common.js"></script>
+
+</html>
