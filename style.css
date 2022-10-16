@@ -923,7 +923,11 @@ background: linear-gradient(90deg, rgba(237,32,39,1) 49%, rgba(151,28,31,1) 100%
   color: #000;
 }
 
-.page12-icons {}
+.page12-icons {
+  display: flex;
+  flex-flow: column;
+  gap: 7px;
+}
 
 .page12 li {
   list-style: none;
@@ -931,7 +935,7 @@ background: linear-gradient(90deg, rgba(237,32,39,1) 49%, rgba(151,28,31,1) 100%
 
 .page12 li img {
   padding-bottom: 5px;
-  width: 80px;
+  width: 4.5vw;
 }
 
 .panel-group .panel {
@@ -1173,7 +1177,7 @@ background: linear-gradient(90deg, rgba(237,32,39,1) 49%, rgba(151,28,31,1) 100%
 }
 
 .p14link {
- margin-top: 10px;
+  margin-top: 10px;
 }
 
 .page14middleleftmiddle {
@@ -1429,9 +1433,9 @@ label {
   width: 56px;
 }
 
-.backicon{
-}
-.backicon img{
+.backicon {}
+
+.backicon img {
   position: absolute;
   bottom: 50px;
   right: 90px;
@@ -1440,17 +1444,76 @@ label {
 
 .tradButton {
   padding: 5px 10px;
-  background: #902925;
   border-radius: 10px;
   border: 0;
-  color: #fff;
+  color: #902925;
+  background-color: #fff;
+  border: 1px solid #902925;
   margin-right: 15px;
 }
 
 .cleanButton {
   padding: 5px 10px;
-  background: #2c5d34;
   border-radius: 10px;
   border: 0;
-  color: #fff;
+  color: #2c5d34;
+  background-color: #fff;
+  border: 1px solid #2c5d34;
+
+}
+
+.active-chart-btn.tradButton {
+  color: #fff !important;
+  background: #902925 !important;
+}
+.active-chart-btn.cleanButton {
+  color: #fff !important;
+  background: #2c5d34 !important;
+}
+
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 25px !important;
+}
+
+.modal-header:after {
+  content: none;
+}
+
+.modal-header:before {
+  content: none;
+}
+
+.env-imp-img {
+  margin: 20px auto;
+  box-shadow: 0 0 18px 4px grey;
+  width: 96%;
+  height: 337px;
+  border-radius: 35px !important;
+}
+
+#Tokyo8 .panel-body {
+  height: 450px;
+  overflow-y: auto;
+  width: 100%;
+}
+
+#Tokyo8 .panel-body > iframe {
+  height: 400px;
+  border: 1px solid #bebebe99;
+  border-radius: 10px;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+#Tokyo8::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+#Tokyo8 {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }

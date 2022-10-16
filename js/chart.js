@@ -17,15 +17,15 @@ cleanGradient.addColorStop(1, 'rgba(34, 74,38, 0)');
 
 
 var tradData  = {
-    labels: ['' ,'1yr','5', '10', '15','20', '25'],
+    labels: ['1 year' ,'5 year','10 year', '15 year', '20 year','25 year'],
 datasets: [{
-      label: 'total paid per month',
+      label: 'Total paid per month',
       fill: true,
       backgroundColor: '#9dc4a3',
       pointBackgroundColor: 'white',
       borderWidth: 1,
       borderColor: 'green',
-      data: [2000, 2000, 2000, 2000, 2000,  10, 10,]
+      data: [2400, 2400, 2400, 2400, 10,  10,]
     },{
       label: 'Total payment since the beginning',
       fill: true,
@@ -33,22 +33,22 @@ datasets: [{
       pointBackgroundColor: 'white',
       borderWidth: 1,
       borderColor: '#911215',
-      data: [2000, 2800,  3900 ,  5100 ,  6500 , 8100 , 9900]
+      data: [2400, 12999,  28815 ,  48057 ,  71467 , 99950,]
     }]
 };
 
 
 
 var cleanData  = {
-  labels: ['' ,'1yr','5', '10', '15','20', '25'],
+  labels: ['1 year' ,'5 year','10 year', '15 year', '20 year','25 year'],
   datasets: [{
-    label: 'total paid per month',
+    label: 'Total paid per month',
     fill: true,
     backgroundColor: '#9dc4a3',
     pointBackgroundColor: 'white',
     borderWidth: 1,
     borderColor: 'green',
-    data: [2000, 2000, 2000, 2000, 2000,  10, 10,]
+    data: [2400, 2400, 2400, 2400,  10, 10,]
   }]
 };
 
@@ -62,7 +62,7 @@ var options = {
   },
   scales: {
     y: {
-        suggestedMax: 10000
+        suggestedMax: 100000
     }
   },
   elements: {
@@ -103,7 +103,7 @@ var chartInstance = new Chart(chart, {
   type: 'line',
   data: tradData,
   options: options
-});
+});;
 
 
 // var chartInstance = new Chart(chart, {
@@ -115,6 +115,8 @@ var chartInstance = new Chart(chart, {
 
 function swapCharts(chart_id) {
   if(chart_id === 'trad') {
+    $('.active-chart-btn').removeClass('active-chart-btn');
+    $('.tradButton').addClass('active-chart-btn');
     chartInstance.destroy();
     chartInstance = new Chart(chart, {
       type: 'line',
@@ -122,6 +124,8 @@ function swapCharts(chart_id) {
       options: options
     });
   } else if(chart_id === 'clean') {
+    $('.active-chart-btn').removeClass('active-chart-btn');
+    $('.cleanButton').addClass('active-chart-btn');
     chartInstance.destroy();
     chartInstance = new Chart(chart, {
       type: 'line',
