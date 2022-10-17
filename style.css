@@ -1536,7 +1536,7 @@ label {
   display: flex;
   flex-wrap: wrap;
   gap: 25px;
-  height: 600px;
+  height: 65vh;
   overflow-y: auto;
 }
 .thumbnail-block > iframe {
