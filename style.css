@@ -1065,6 +1065,19 @@ background: linear-gradient(90deg, rgba(237,32,39,1) 49%, rgba(151,28,31,1) 100%
   width: 260px;
   margin-top: 30px;
 }
+.page13ul{
+  display: flex;
+  justify-content: space-between;
+}
+.page13ul li{
+  display: flex;
+  align-items: center;
+}
+.page13ul li i{
+  margin-right: 10px;
+  color: grey;
+  font-size: 10px;
+}
 
 .page13 h3 {
   margin-top: 10px;
