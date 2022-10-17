@@ -82,7 +82,7 @@ var options = {
         label: function(tooltipItems) {
           console.log(tooltipItems);
           if(tooltipItems.datasetIndex === 1){
-            var multistringText = [`Total paid per year: ${tradPerYear[tooltipItems.label]}`, `Total paid since beginning: ${tooltipItems.formattedValue}`]
+            var multistringText = [`Monthly payment: ${tradPerYear[tooltipItems.label]}`, `Total paid since beginning: ${tooltipItems.formattedValue}`]
             return  multistringText;
           } else {
             return "Total paid per year: " + tooltipItems.formattedValue;
