@@ -716,6 +716,11 @@ background: linear-gradient(90deg, rgba(237,32,39,1) 49%, rgba(151,28,31,1) 100%
   padding-right: 15px;
 }
 
+.modal-footer {
+  background-color: #fff;
+  border-radius: 0 0 10px 10px;
+}
+
 .modal-footer span {
   font-family: Poppins-light;
   font-size: 16px;
@@ -1490,6 +1495,8 @@ label {
   align-items: center;
   justify-content: space-between;
   padding: 0 25px !important;
+  background-color: #fff;
+  border-radius: 10px 10px 0 0;
 }
 
 .modal-header:after {
@@ -1506,12 +1513,16 @@ label {
 
 .modal-content {
   height: 90%;
+  background: transparent;
+  box-shadow: none;
 }
 
 
 .modal-sub-content {
-  height: calc(100% - 100px);
+  max-height: calc(100% - 100px);
   overflow-y: scroll;
+  background: #fff;
+  /* border-radius: 0 0 10px 10px; */
 }
 
 .env-imp-img {
@@ -1563,6 +1574,11 @@ label {
   border: 1px solid #bebebe;
   border-radius: 10px;
   background: #fafafa;
+}
+
+.modleft > img {
+  width: 66%;
+  margin: 0 auto;
 }
 
 ::-webkit-scrollbar {

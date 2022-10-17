@@ -16,10 +16,19 @@ cleanGradient.addColorStop(0.5, 'rgba(34, 74,38, 0.5)');
 cleanGradient.addColorStop(1, 'rgba(34, 74,38, 0)');
 
 
+var tradPerYear = {
+  '1 year': 200, 
+  '5 year': 234, 
+  '10 year': 285, 
+  '15 year': 346, 
+  '20 year': 421, 
+  '25 year': 513, 
+};
+
 var tradData  = {
     labels: ['1 year' ,'5 year','10 year', '15 year', '20 year','25 year'],
 datasets: [{
-      label: 'Total paid per month',
+      label: 'Total paid per year',
       fill: true,
       backgroundColor: '#9dc4a3',
       pointBackgroundColor: 'white',
@@ -42,7 +51,7 @@ datasets: [{
 var cleanData  = {
   labels: ['1 year' ,'5 year','10 year', '15 year', '20 year','25 year'],
   datasets: [{
-    label: 'Total paid per month',
+    label: 'Total paid per year',
     fill: true,
     backgroundColor: '#9dc4a3',
     pointBackgroundColor: 'white',
@@ -51,7 +60,6 @@ var cleanData  = {
     data: [2400, 2400, 2400, 2400,  10, 10,]
   }]
 };
-
 
 var options = {
   responsive: true,
@@ -65,14 +73,29 @@ var options = {
         suggestedMax: 100000
     }
   },
-  elements: {
-    line: {
-      tension: 0.4
+  plugins: {
+    legend: {
+      display: false
+    },
+    tooltip: {
+      callbacks: {
+        label: function(tooltipItems) {
+          console.log(tooltipItems);
+          if(tooltipItems.datasetIndex === 1){
+            var multistringText = [`Total paid per year: ${tradPerYear[tooltipItems.label]}`, `Total paid since beginning: ${tooltipItems.formattedValue}`]
+            return  multistringText;
+          } else {
+            return "Total paid per year: " + tooltipItems.formattedValue;
+          }
+        }
+      }
     }
   },
-  legend: {
-    display: false
-  },
+  // elements: {
+  //   line: {
+  //     tension: 0.4
+  //   }
+  // },
   point: {
     backgroundColor: 'white'
   },
