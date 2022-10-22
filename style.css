@@ -843,8 +843,9 @@ background: linear-gradient(90deg, rgba(237,32,39,1) 49%, rgba(151,28,31,1) 100%
 }
 
 .modal-dialog img {
-
   border-radius: 15px;
+  height: 121px;
+  width: 250px;
 }
 
 .modleft {
@@ -1079,6 +1080,7 @@ background: linear-gradient(90deg, rgba(237,32,39,1) 49%, rgba(151,28,31,1) 100%
 .page13ul{
   display: flex;
   justify-content: space-between;
+  list-style-type: square;
 }
 .page13ul li{
   display: flex;
@@ -1362,7 +1364,7 @@ label {
 /*------------------------  page 15   -----------------------------*/
 /*----------------------------------------------------------------*/
 .page15 {
-  background-image: url('images/page-15banner.jpg');
+  background-image: url('images/pg13-bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
@@ -1580,6 +1582,7 @@ label {
 
 .modleft > img {
   width: 66%;
+  height: auto;
   margin: 0 auto;
 }
 
