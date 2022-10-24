@@ -17,51 +17,28 @@ cleanGradient.addColorStop(1, 'rgba(34, 74,38, 0)');
 
 
 var tradPerMonth = {
-  '1 year': 200, 
-  '5 year': 234, 
-  '10 year': 285, 
-  '15 year': 346, 
-  '20 year': 421, 
-  '25 year': 513, 
-  '26 year': 533, 
-  '30 year': 633, 
+  '1 year': 200,
+  '5 year': 234,
+  '10 year': 285,
+  '15 year': 346,
+  '20 year': 421,
+  '25 year': 513,
+  '26 year': 533,
+  '30 year': 633,
 };
 var cleanPerMonth = {
-  '1 year': 200, 
-  '5 year': 200, 
-  '10 year': 200, 
-  '15 year': 200, 
-  '20 year': 200, 
-  '25 year': 200, 
-  '26 year': 10, 
-  '30 year': 10, 
+  '1 year': 200,
+  '5 year': 200,
+  '10 year': 200,
+  '15 year': 200,
+  '20 year': 200,
+  '25 year': 200,
+  '26 year': 10,
+  '30 year': 10,
 };
 
-var tradData  = {
-    labels: ['1 year' ,'5 year','10 year', '15 year', '20 year','25 year', '26 year', '30 year'],
-datasets: [{
-      label: 'Total paid per year',
-      fill: true,
-      backgroundColor: '#9dc4a3',
-      pointBackgroundColor: 'white',
-      borderWidth: 1,
-      borderColor: 'green',
-      data: [2400, 2400, 2400, 2400, 2400, 2400, 120,  120,]
-    },{
-      label: 'Total payment since the beginning',
-      fill: true,
-      backgroundColor: '#d69aa0',
-      pointBackgroundColor: 'white',
-      borderWidth: 1,
-      borderColor: '#911215',
-      data: [2400, 12999,  28815 ,  48057 ,  71467 , 99950, 106348, 134604]
-    }]
-};
-
-
-
-var cleanData  = {
-  labels: ['1 year' ,'5 year','10 year', '15 year', '20 year','25 year'],
+var tradData = {
+  labels: ['1 year', '', '', '', '5 year', '', '', '', '', '10 year', '', '', '', '', '15 year', '', '', '', '', '20 year', '', '', '', '', '25 year', '26 year', '', '', '', '30 year',],
   datasets: [{
     label: 'Total paid per year',
     fill: true,
@@ -69,7 +46,28 @@ var cleanData  = {
     pointBackgroundColor: 'white',
     borderWidth: 1,
     borderColor: 'green',
-    data: [2400, 2400, 2400, 2400,  120, 120,]
+    data: [2400, 2400, 2400, 2400, 2400, 2400, 2400, 2400, 2400, 2400, 2400, 2400, 2400, 2400, 2400, 2400, 2400, 2400, 2400, 2400, 2400, 2400, 2400, 2400, 2400, 120, 120, 120, 120, 120,]
+  }, {
+    label: 'Total payment since the beginning',
+    fill: true,
+    backgroundColor: '#d69aa0',
+    pointBackgroundColor: 'white',
+    borderWidth: 1,
+    borderColor: '#911215',
+    data: [2400, 4896, 7492, 10192, 12999, 15919, 18956, 22114, 25399, 28815, 32367, 36062, 39904, 43901, 48057, 52379, 56874, 61549, 66411, 71467, 76726, 82195, 87883, 93798, 99950, 106348, 113002, 119922, 127119, 134604,]
+  }]
+};
+
+var cleanData = {
+  labels: ['1 year', '', '', '', '5 year', '', '', '', '', '10 year', '', '', '', '', '15 year', '', '', '', '', '20 year', '', '', '', '', '25 year', '26 year', '', '', '', '30 year',],
+  datasets: [{
+    label: 'Total paid per year',
+    fill: true,
+    backgroundColor: '#9dc4a3',
+    pointBackgroundColor: 'white',
+    borderWidth: 1,
+    borderColor: 'green',
+    data: [2400, 2400, 2400, 2400, 2400, 2400, 2400, 2400, 2400, 2400, 2400, 2400, 2400, 2400, 2400, 2400, 2400, 2400, 2400, 2400, 2400, 2400, 2400, 2400, 2400, 120, 120, 120, 120, 120,]
   }]
 };
 
@@ -80,26 +78,34 @@ var options = {
     easing: 'easeInOutQuad',
     duration: 500
   },
-  scales: {
-    y: {
-        // suggestedMax: 100000,
-        type: 'logarithmic'
+  elements: {
+    point: {
+      pointRadius: [3, 0, 0, 0, 3, 0, 0, 0, 0, 3, 0, 0, 0, 0, 3, 0, 0, 0, 0, 3, 0, 0, 0, 0, 3, 3, 0, 0, 0, 3,],
     }
   },
+  scales: {
+    y: {
+      suggestedMax: 200000,
+      type: 'logarithmic'
+    },
+  },
   plugins: {
+    datalabels: {
+      display: false,
+    },
     legend: {
       display: false
     },
     tooltip: {
       callbacks: {
-        label: function(tooltipItems) {
+        label: function (tooltipItems) {
           console.log(tooltipItems);
-          if(tooltipItems.datasetIndex === 1){
-            var multistringText = [`Monthly payment: ${tradPerMonth[tooltipItems.label]}`, `Total paid since beginning: ${tooltipItems.formattedValue}`]
-            return  multistringText;
+          if (tooltipItems.datasetIndex === 1) {
+            var multistringText = [`Monthly payment: ${tradPerMonth[tooltipItems.label]}`, `Annual payment: ${tooltipItems.formattedValue}`]
+            return multistringText;
           } else {
             var multistringText = [`Monthly payment: ${cleanPerMonth[tooltipItems.label]}`, `Annual payment: ${tooltipItems.formattedValue}`]
-            return  multistringText;
+            return multistringText;
           }
         }
       }
@@ -151,7 +157,7 @@ var chartInstance = new Chart(chart, {
 
 
 function swapCharts(chart_id) {
-  if(chart_id === 'trad') {
+  if (chart_id === 'trad') {
     $('.active-chart-btn').removeClass('active-chart-btn');
     $('.tradButton').addClass('active-chart-btn');
     chartInstance.destroy();
@@ -160,7 +166,7 @@ function swapCharts(chart_id) {
       data: tradData,
       options: options
     });
-  } else if(chart_id === 'clean') {
+  } else if (chart_id === 'clean') {
     $('.active-chart-btn').removeClass('active-chart-btn');
     $('.cleanButton').addClass('active-chart-btn');
     chartInstance.destroy();
