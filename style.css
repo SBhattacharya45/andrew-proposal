@@ -1450,7 +1450,7 @@ label {
 
 .nexticon img {
   position: absolute;
-  bottom: 50px;
+  bottom: 25px;
   right: 15px;
   width: 56px;
 }
@@ -1459,7 +1459,7 @@ label {
 
 .backicon img {
   position: absolute;
-  bottom: 50px;
+  bottom: 25px;
   right: 90px;
   width: 56px;
 }
@@ -1603,4 +1603,164 @@ label {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555; 
+}
+
+img.img-responsive.nextpp {
+  z-index: 10;
+}
+
+img.img-responsive.backpp {
+  z-index: 10;
+}
+
+.pg5-block {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 45px;
+}
+
+.pg5-container {
+  width: 18%;
+  position: relative;
+}
+
+.pg5-content {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  padding: 20px 10px;
+  box-shadow: 0 0 14px 2px #2224;
+  position: relative;
+  width: 100%;
+  z-index: 10;
+  height: 100%;
+}
+
+.pg5-icon {
+  background: sandybrown;
+  color: #fff;
+  width: 5vw;
+  height: 5vw;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.4vw;
+}
+
+.pg5-content-1 {
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  font-size: 2vw;
+  font-weight: bold;
+  font-family: 'Poppins-Light';
+}
+
+.pg5-custom-hr {
+  width: 50%;
+  height: 2px;
+  background: red;
+  margin-bottom: 18px;
+}
+
+.pg5-content-2 {
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  text-align: center;
+  font-size: 1.2vw;
+  width: 80%;
+  font-family: 'Poppins-Light';
+  font-weight: bold;
+}
+
+.pg5-num {
+  font-family: 'BebasNeue' !important;
+  font-size: 3.7vw;
+}
+
+.pg5-bg-block {
+  height: 109%;
+  background: sandybrown;
+  width: 90%;
+  position: absolute;
+  top: -1.25vw;
+  left: 0.8vw;
+  border-radius: 10px;
+  z-index: 5;
+}
+
+/* for page 6 */
+
+.pg6-row {
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% - 8vw);
+  font-family: 'Poppins-Light';
+  margin-top: 2vw;
+}
+
+.pg6-row-left {
+  display: flex;
+  flex-flow: column;
+  color: #fff;
+  width: 20vw;
+  justify-content: flex-end;
+}
+
+.pg6-row-left > div:first-of-type {
+  font-size: 3.4vw;
+  font-family: 'BebasNeue' !important;
+  font-weight: bold;
+}
+.pg6-row-left > div:last-of-type {
+  font-size: 1.1vw;
+  font-weight: bold;
+}
+
+.pg6-row-right {
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    width: calc(100% - 21vw);
+}
+
+.right-block {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 8vw;
+  justify-content: flex-end;
+}
+
+.right-block img {
+  width: 100%;
+}
+
+.right-block > div:last-of-type {
+  font-size: 1.1vw;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.pg6-year-row {
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  width: calc(100% - 21vw);
+}
+
+.year-block {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 7vw;
+  justify-content: flex-end;
+  font-size: 3.4vw;
+  font-family: 'BebasNeue' !important;
+  font-weight: bold;
+  border-radius: 10px;
 }
