@@ -1764,3 +1764,128 @@ img.img-responsive.backpp {
   font-weight: bold;
   border-radius: 10px;
 }
+
+/* for nav overlay */
+
+#overlay {
+  width: 100%;
+  height: 100%;
+  background-color: #00000099;
+  position: fixed;
+  z-index: 5000;
+  display: none;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.open-overlay {
+  display: flex !important;
+}
+
+#nav-dialogue {
+  width: 90%;
+  height: fit-content;
+  background-color: #003150;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  display: none;
+  font-family: Poppins-Light;
+  margin-top: 60px;
+}
+
+.open-nav-dialogue {
+  display: block !important;
+}
+
+#nav-top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 45px;
+  font-weight: bold;
+  font-family: BebasNeue;
+}
+
+.nav-content {
+  overflow-y: auto;
+  height: 87%;
+  margin: 15px 0;
+  padding-right: 15px;
+  display: flex;
+  flex-flow: column;
+  gap: 25px;
+}
+
+.nav-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 2.5%;
+}
+
+.nav-block {
+  background-color: #001F33;
+  width: 18%;
+  border-radius: 10px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.nav-block.active-nav-block {
+  border: 2px solid #43c0f3;
+  color: #43c0f3;
+}
+
+.nav-block-img {
+  height: 14vh;
+  width: 95%;
+  background-color: #0f9d58;
+  border-radius: 10px;
+  background-size: cover;
+  margin-bottom: 12px;
+}
+
+.nav-block-text {
+  height: 13%;
+  display: flex;
+  align-items: flex-end;
+  font-weight: bold;
+  font-size: 0.8vw;
+}
+
+.nav-content::-webkit-scrollbar {
+  width: 10px;
+}
+
+.nav-content::-webkit-scrollbar-track {
+  background: #d1d1d14d;
+  border-radius: 10px;
+}
+
+.nav-content::-webkit-scrollbar-thumb {
+  background: #9ab4e1;
+  border-radius: 10px;
+}
+
+.nav-content::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.navmenu-icon {
+  background: rgb(44,95,53);
+  background: linear-gradient(240deg, rgba(44,95,53,1) 0%, rgba(92,171,85,1) 100%);
+  color: #fff;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 35px;
+  padding: 0 10px;
+  border-radius: 10px;
+  z-index: 70;
+}

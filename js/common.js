@@ -32,3 +32,22 @@
 ////////////////////
 //// page slid from keybord end
 ///////////////////
+
+function openNav() {
+  $('#overlay').addClass('open-overlay');
+  $('#nav-dialogue').addClass('open-nav-dialogue');
+}
+
+function closeNav() {
+  $('#overlay').removeClass('open-overlay');
+  $('#nav-dialogue').removeClass('open-nav-dialogue');
+}
+
+function navigateTo(num) {
+  if(num == 1) {
+    window.location.replace(`index.html`);
+  } else {
+    window.location.replace(`page${num}.html`);
+  }
+}
+
