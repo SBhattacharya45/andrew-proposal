@@ -9,6 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="style.css">
+
   </head>
   <body>
     <div id="overlay" onclick="closeOverlay()">
@@ -25,7 +26,7 @@
                     <div class="nav-block-img" style="background-image: url('./images/pg1-bg.jpg')"></div>
                     <div class="nav-block-text">Welcome to SunLife</div>
                 </div>
-                <div class="nav-block active-nav-block">
+                <div class="nav-block" onclick="navigateTo(2)">
                     <div class="nav-block-img" style="background-image: url('./images/pg2-bg.jpg')"></div>
                     <div class="nav-block-text">Our Agenda</div>
                 </div>
@@ -37,7 +38,7 @@
                     <div class="nav-block-img" style="background-image: url('./images/pg4-bg.jpg')"></div>
                     <div class="nav-block-text">Household Names</div>
                 </div>
-                <div class="nav-block" onclick="navigateTo(5)">
+                <div class="nav-block active-nav-block">
                     <div class="nav-block-img" style="background-image: url('./images/pg5-bg.jpg')"></div>
                     <div class="nav-block-text">More People Choose Solar</div>
                 </div>
@@ -85,21 +86,13 @@
           </div>
       </div>
     </div>
-    <div class="container-fluid page2 sunslide">
+    <div class="container-fluid page5 sunslide">
       <div class="row">
         <div class="col-lg-12">
-          <div class="col-lg-3">
-            <h3>Today's agenda</h3>
-            <ul>
-              <li>Understanding your goals</li>
-              <li>The best program for you</li>
-              <li>Benefits of going solar</li>
-              <li>Breakdown of your current electric bill</li>
-              <li>Review your solar design</li>
-            </ul>
-          </div>
-          <div class="col-lg-4">  </div>
-          <div class="col-lg-4"></div>
+          <h2>About Sunlife</h2>
+        </div>
+        <div class="col-lg-12">
+            content here
         </div>
       </div>
     </div>
@@ -109,17 +102,17 @@
     <div class="container-fluid backicon">
       <div class="container text-center">
         <div class="row" >
-          <a href="index.html" id="leftPicture" class="arrow-leftright"><img src="images/back.png" class="img-responsive backpp"/></a>
+          <a href="page4.html" id="leftPicture" class="arrow-leftright"><img src="images/back.png" class="img-responsive backpp"/></a>
         </div>
       </div>
     </div>
     <div class="container-fluid nexticon">
       <div class="container text-center">
         <div class="row" >
-          <a href="page3.html" id="rightPicture" class="arrow-leftright"><img src="images/nicon.png" class="img-responsive nextpp" /></a>
+          <a href="page6.html" id="rightPicture" class="arrow-leftright"><img src="images/nicon.png" class="img-responsive nextpp" /></a>
         </div>
       </div>
     </div>
   </body>
-          <script src="js/common.js"></script>
+        <script src="js/common.js"></script>
 </html>
