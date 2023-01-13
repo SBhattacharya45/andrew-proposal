@@ -9,7 +9,23 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="style.css">
+    <style>
+      #growth-chart-dialogue {
+        width: 50vw;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        font-size: 1vw;
+        font-family: 'Poppins-Light';
+        font-weight: bold;
+        margin-top: 6vh;
+        display: none;
+      }
 
+      #growth-chart-dialogue a {
+        font-size: 0.9vw;
+      }
+    </style>
   </head>
   <body>
     <div id="overlay" onclick="closeOverlay()">
@@ -85,6 +101,18 @@
             </div>
           </div>
       </div>
+      <div id="growth-chart-dialogue">
+        <div style="display: flex;align-items: center; justify-content: space-between; margin-bottom: 10px;">
+          <div>Residential solar installations and forecast, 2020-2027</div>
+          <i style="font-size: 24px;" class="fa-solid fa-xmark" onclick="toggleGrowthChart();"></i>
+        </div>
+        <div>
+          <img style="width: 100%;" src="./images/growth-chart.png" alt="">
+        </div>
+        <div style="margin-top: 15px;">
+          <a href="https://www.seia.org/research-resources/solar-market-insight-report-2022-q4" target="_blank" rel="noopener noreferrer">https://www.seia.org/research-resources/solar-market-insight-report-2022-q4</a>
+        </div>
+      </div>
     </div>
     <div class="container-fluid page5 sunslide">
       <div class="row">
@@ -109,7 +137,7 @@
                 </div>
               </div>
             </div>
-            <div class="pg5-container">
+            <div class="pg5-container" onclick="toggleGrowthChart();">
               <div class="pg5-bg-block" style="background: rgb(44,95,53); background: linear-gradient(240deg, rgba(44,95,53,1) 0%, rgba(92,171,85,1) 100%);"></div>
               <div class="pg5-content">
                 <div class="pg5-icon" style="background: rgb(44,95,53); background: linear-gradient(240deg, rgba(44,95,53,1) 0%, rgba(92,171,85,1) 100%);">

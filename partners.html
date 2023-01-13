@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>SunLife Solar</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .partner-page {
+            height: 100%;
+            padding-left: 50px;
+            padding-right: 50px;
+            background-image: url(images/page14banner.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .partner-page h2 {
+            margin-top: 50px;
+            font-family: BebasNeue;
+            font-size: 2.9vw;
+            font-weight: bold;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .partners-block {
+            width: 100%;
+            display: flex;
+            margin-top: 20px;
+            gap: 15px;
+            font-family: 'Poppins-light';
+        }
+
+        .partners-block>div {
+            width: 20%;
+        }
+
+        .partner-stage {
+            height: 22vh;
+            background-color: #db4437;
+            color: white;
+            display: flex;
+            flex-flow: column;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2vw;
+            border-radius: 10px 10px 0 0;
+
+        }
+
+        .partner-stage i {
+            font-size: 2vw;
+        }
+
+        .partner-logos {
+            padding: 15px 5px;
+            width: 100%;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            height: calc(100% - 22vh);
+        }
+
+        .logo-img-block {
+            height: 7vh;
+            max-width: 100%;
+        }
+
+        .logo-img-block:not(:first-of-type) {
+            margin-top: 2vh;
+        }
+
+        img.logo-img {
+            height: 100%;
+            max-width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="overlay" onclick="closeOverlay()">
+        <div id="nav-dialogue">
+            <div id="nav-top">
+                <div>Main Navigation</div>
+                <div id="nav-close-btn" onclick="closeNav()"
+                    style=" height: 55px; width: 55px; display:flex; align-items: center; justify-content: center; border-radius:10px; padding: 5px; background-color:#9AB4E1">
+                    <i style="font-size: 32px;" class="fa-regular fa-x"></i>
+                </div>
+            </div>
+            <div class="nav-content">
+                <div id="nav-first-row" class="nav-row">
+                    <div class="nav-block" onclick="navigateTo(1)">
+                        <div class="nav-block-img" style="background-image: url('./images/pg1-bg.jpg')"></div>
+                        <div class="nav-block-text">Welcome to SunLife</div>
+                    </div>
+                    <div class="nav-block" onclick="navigateTo(2)">
+                        <div class="nav-block-img" style="background-image: url('./images/pg2-bg.jpg')"></div>
+                        <div class="nav-block-text">Our Agenda</div>
+                    </div>
+                    <div class="nav-block" onclick="navigateTo(3)">
+                        <div class="nav-block-img" style="background-image: url('./images/pg3-bg.jpg')"></div>
+                        <div class="nav-block-text">Today's Discovery</div>
+                    </div>
+                    <div class="nav-block" onclick="navigateTo(4)">
+                        <div class="nav-block-img" style="background-image: url('./images/pg4-bg.jpg')"></div>
+                        <div class="nav-block-text">Household Names</div>
+                    </div>
+                    <div class="nav-block active-nav-block">
+                        <div class="nav-block-img" style="background-image: url('./images/pg5-bg.jpg')"></div>
+                        <div class="nav-block-text">More People Choose Solar</div>
+                    </div>
+                </div>
+                <div id="nav-second-row" class="nav-row">
+                    <div class="nav-block" onclick="navigateTo(6)">
+                        <div class="nav-block-img" style="background-image: url('./images/pg6-bg.jpg')"></div>
+                        <div class="nav-block-text">Inflation</div>
+                    </div>
+                    <div class="nav-block" onclick="navigateTo(7)">
+                        <div class="nav-block-img" style="background-image: url('./images/pg7-bg.jpg')"></div>
+                        <div class="nav-block-text">Traditional vs. Clean Energy</div>
+                    </div>
+                    <div class="nav-block" onclick="navigateTo(8)">
+                        <div class="nav-block-img" style="background-image: url('./images/pg8-bg.jpg')"></div>
+                        <div class="nav-block-text">How Clean Energy is Made</div>
+                    </div>
+                    <div class="nav-block" onclick="navigateTo(9)">
+                        <div class="nav-block-img" style="background-image: url('./images/pg9-bg.jpg')"></div>
+                        <div class="nav-block-text">The Solar Solution</div>
+                    </div>
+                    <div class="nav-block" onclick="navigateTo(10)">
+                        <div class="nav-block-img" style="background-image: url('./images/pg10-bg.jpg')"></div>
+                        <div class="nav-block-text">FAQs</div>
+                    </div>
+                </div>
+                <div id="nav-third-row" class="nav-row">
+                    <div class="nav-block" onclick="navigateTo(11)">
+                        <div class="nav-block-img" style="background-image: url('./images/pg11-bg.jpg')"></div>
+                        <div class="nav-block-text">Sunnova Protect</div>
+                    </div>
+                    <div class="nav-block" onclick="navigateTo(12)">
+                        <div class="nav-block-img" style="background-image: url('./images/pg12-bg.jpg')"></div>
+                        <div class="nav-block-text">SunLife Project Progress</div>
+                    </div>
+                    <div class="nav-block" onclick="navigateTo(13)">
+                        <div class="nav-block-img" style="background-image: url('./images/pg13-bg.jpg')"></div>
+                        <div class="nav-block-text">Get Paid by SunLife</div>
+                    </div>
+                    <div class="nav-block" onclick="navigateTo(14)">
+                        <div class="nav-block-img" style="background-image: url('./images/pg14-bg.jpg')"></div>
+                        <div class="nav-block-text">Next Steps</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid partner-page sunslide">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Our Partners</h2>
+            </div>
+            <div class="col-lg-12">
+                <div class="col-lg-12">
+                    <div class="partners-block">
+                        <div id="man-col">
+                            <div class="partner-stage" style="background-color: #4188c0">
+                                <i class="fa-solid fa-industry"></i>
+                                <span>Manufacturing</span>
+                            </div>
+                            <div class="partner-logos" style="border: 2px solid #4188c0; background-color: #EDF3F8;">
+                                <div class="logo-img-block">
+                                    <img src="./images/partner-logo/sunpower.png" alt="" class="logo-img">
+                                </div>
+                                <div class="logo-img-block">
+                                    <img src="./images/partner-logo/aptos.png" alt="" class="logo-img">
+                                </div>
+                                <div class="logo-img-block">
+                                    <img src="./images/partner-logo/qcells.png" alt="" class="logo-img">
+                                </div>
+                                <div class="logo-img-block">
+                                    <img src="./images/partner-logo/rec.png" alt="" class="logo-img">
+                                </div>
+                                <div class="logo-img-block">
+                                    <img src="./images/partner-logo/jasolar.png" alt="" class="logo-img">
+                                </div>
+                                <div class="logo-img-block">
+                                    <img src="./images/partner-logo/canadiansolar.png" alt="" class="logo-img">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="fin-col">
+                            <div class="partner-stage" style="background-color: #e7b834;">
+                                <i class="fa-solid fa-coins"></i>
+                                <span>Finance</span>
+                            </div>
+                            <div class="partner-logos" style="border: 2px solid #e7b834; background-color: #FCF8ED;">
+                                <div class="logo-img-block">
+                                    <img src="./images/partner-logo/sunnova.png" alt="" class="logo-img">
+                                </div>
+                                <div class="logo-img-block" style="height: 10vh;">
+                                    <img src="./images/partner-logo/tcu.png" alt="" class="logo-img">
+                                </div>
+                                <div class="logo-img-block" style="height: 10vh;">
+                                    <img src="./images/partner-logo/mosaic.png" alt="" class="logo-img">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="install-col">
+                            <div class="partner-stage" style="background-color: #1f9b00;">
+                                <i class="fa-solid fa-screwdriver-wrench"></i>
+                                <span>Installation</span>
+                            </div>
+                            <div class="partner-logos" style="border: 2px solid #1f9b00; background-color: #ECF5E9;">
+                                <div class="logo-img-block">
+                                    <img src="./images/partner-logo/hytech.png" alt="" class="logo-img">
+                                </div>
+                                <div class="logo-img-block">
+                                    <img src="./images/partner-logo/lunex.png" alt="" class="logo-img">
+                                </div>
+                                <div class="logo-img-block" style="height: 10vh;">
+                                    <img src="./images/partner-logo/skyline.png" alt="" class="logo-img">
+                                </div>
+                                <div class="logo-img-block" style="height: 10vh;">
+                                    <img src="./images/partner-logo/infinity.png" alt="" class="logo-img">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="moni-col">
+                            <div class="partner-stage" style="background-color: #822fb8;">
+                                <i class="fa-solid fa-desktop"></i>
+                                <span>Monitoring</span>
+                            </div>
+                            <div class="partner-logos" style="border: 2px solid #822fb8; background-color: #F1EAF7;">
+                                <div class="logo-img-block">
+                                    <img src="./images/partner-logo/solaredge.png" alt="" class="logo-img">
+                                </div>
+                                <div class="logo-img-block">
+                                    <img src="./images/partner-logo/enphase.png" alt="" class="logo-img">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="war-col">
+                            <div class="partner-stage" style="background-color: #d87f03;">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Warranty</span>
+                            </div>
+                            <div class="partner-logos" style="border: 2px solid #d87f03; background-color: #FAF2E9;">
+                                <div class="logo-img-block">
+                                    <img src="./images/partner-logo/sunnova.png" alt="" class="logo-img">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="navmenu-icon">
+        <i class="fa-solid fa-bars" onclick="openNav()"></i>
+    </div>
+    <div class="container-fluid backicon">
+        <div class="container text-center">
+            <div class="row">
+                <a href="page4.html" id="leftPicture" class="arrow-leftright"><img src="images/back.png"
+                        class="img-responsive backpp" /></a>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid nexticon">
+        <div class="container text-center">
+            <div class="row">
+                <a href="page6.html" id="rightPicture" class="arrow-leftright"><img src="images/nicon.png"
+                        class="img-responsive nextpp" /></a>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/common.js"></script>
+
+</html>
