@@ -9,6 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         .about-sunlife li {
@@ -57,12 +58,14 @@
             color: white;
             text-align: center;
             text-decoration-style: dotted;
-        }
+            font-family: Poppins-Light !important; 
+         }
 
         .chip{
           display: flex;
           width: 20vw;
           border-bottom: 1px solid #faa554;
+          padding-bottom: 20px;
         }
 
         .graphic i,h3{
@@ -81,6 +84,7 @@
         }
         .info-bit{
           color: white  !important;
+          margin-top: 0 !important;
         }
     </style>
   </head>
@@ -163,7 +167,7 @@
         <div>
             <div class="row" style="display: flex;  flex-direction: column;">
             <div class="col-lg-12" style="display: flex; align-items: center; justify-content: center;">
-              <h2 style="margin-top: 0;">ABOUT<img src="./images/sunlife-logo.png" height="60px" style="margin-left: 10px;"> </h2>
+              <h2 style="margin-top: 0;">ABOUT<img src="./images/sunlife-logo.png" height="60px" style="margin-left: 10px; margin-bottom: 25px;"> </h2>
             </div>
             <div style="display: flex; justify-content: space-between; width: 90vw; height: 70vh;">
               <div style="display: flex; flex-direction: column; justify-content: space-between;">
@@ -191,21 +195,21 @@
                 <div  class="chip" style="width:40vw">
                   <div class="graphic"><h3 style="text-align: center; padding-bottom:100px ;">EVERY FINANCIAL OPTION TO BEST FIT YOUR NEEDS</h3></div>
                 </div>
-                <div  class="chip" style="display: flex; width: 40vw; border-bottom: none;">
-                  <div class="graphic"><i class="fa-solid fa-flag-usa" style="font-size:10vw;"></i></div>
+                <div  class="chip" style="display: flex; width: 40vw; border-bottom: none; align-items: center;">
+                  <div class="graphic"><img src="./images/usaMap.png" alt="" style="width: 20vw;"></div>
                   <p class="info-bit">One of the fastest growing companies in the United States</p>
                 </div>
               </div>
               <div style="display: flex; flex-direction: column; justify-content: space-between;">
                 <div  class="chip" style="flex-direction: column;">
-                  <div class="graphic" style="display: flex;"><h3>TOP RATED</h3><i class="fa-brands fa-facebook" style="font-size: 3vw; margin-right: 10px;"></i> <i class="fa-brands fa-google" style="font-size: 3vw;"></i></div>
+                  <div class="graphic" style="display: flex;"><h3>TOP RATED</h3><i class="fa-brands fa-facebook" style="font-size: 40px; margin-right: 10px;"></i> <i class="fa-brands fa-google" style="font-size: 40px;"></i></div>
                   <p class="info-bit">Google, Facebook and Indeed</p>
                 </div>
                 <div  class="chip" style="flex-direction: column;">
-                  <div class="graphic" style="display: flex;"><h3>NATIONWIDE INSTALL NETWORK</h3><i class="fa-solid fa-share-nodes" style="font-size: 3vw;"></i> </div>
+                  <div class="graphic" style="display: flex;"><h3>NATIONWIDE INSTALL NETWORK</h3><i class="fa-solid fa-share-nodes" style="font-size: 40px;"></i> </div>
                 </div>
                 <div  class="chip" style="flex-direction: column; border-bottom: none;">
-                  <div class="graphic" style="display: flex;"><h3>PARTNERSHIP</h3><i class="fa-solid fa-thumbs-up" style="font-size: 3vw;"></i></div>
+                  <div class="graphic" style="display: flex;"><h3>PARTNERSHIP</h3><i class="fa-solid fa-thumbs-up" style="font-size: 40px;"></i></div>
                   <p class="info-bit">With leading home effiency brands
                     <span style="color: #faa554;"> Brink Security, Sunpower
                       Sunnova, and Moreal </span></p>
