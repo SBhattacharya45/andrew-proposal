@@ -43,6 +43,11 @@ function closeNav() {
   $('#nav-dialogue').removeClass('open-nav-dialogue');
 }
 
+function toggleGrowthChart() {
+  $('#overlay').toggleClass('open-overlay');
+  $('#growth-chart-dialogue').toggleClass('open-nav-dialogue');
+}
+
 function navigateTo(num) {
   if(num == 1) {
     window.location.replace(`index.html`);

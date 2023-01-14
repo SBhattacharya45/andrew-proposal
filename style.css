@@ -68,7 +68,7 @@ html {
 .page2 h3 {
   margin-top: 40px;
   font-family: BebasNeue;
-  font-size: 50px;
+  font-size: 2.9vw;
   font-weight: bold;
   color: #fff;
 }
@@ -214,7 +214,7 @@ html {
 .page5 h2 {
   margin-top: 50px;
   font-family: BebasNeue;
-  font-size: 50px;
+  font-size: 2.9vw;
   color: #fff;
   font-weight: bold;
   padding-left: 15px;
@@ -312,7 +312,7 @@ html {
 .page6 h2 {
   margin-top: 50px;
   font-family: BebasNeue;
-  font-size: 50px;
+  font-size: 2.9vw;
   color: #fff;
   font-weight: bold;
   padding-left: 15px;
@@ -368,7 +368,7 @@ html {
 .page7 h2 {
   margin-top: 50px;
   font-family: BebasNeue;
-  font-size: 50px;
+  font-size: 2.9vw;
   color: #fff;
   font-weight: bold;
   padding-left: 15px;
@@ -472,7 +472,7 @@ html {
 .page8right h2 {
   margin-top: 130px;
   font-family: BebasNeue;
-  font-size: 50px;
+  font-size: 2.9vw;
   color: #fff;
   font-weight: bold;
   padding-left: 15px;
@@ -483,7 +483,7 @@ html {
 .page8left h2 {
   margin-top: 130px;
   font-family: BebasNeue;
-  font-size: 50px;
+  font-size: 2.9vw;
   color: #fff;
   font-weight: bold;
   padding-left: 15px;
@@ -494,7 +494,7 @@ html {
 .page8mainheading h2 {
 
   font-family: BebasNeue;
-  font-size: 50px;
+  font-size: 2.9vw;
   color: #fff;
   font-weight: bold;
   padding-left: 15px;
@@ -633,7 +633,7 @@ background: linear-gradient(90deg, rgba(237,32,39,1) 49%, rgba(151,28,31,1) 100%
 .page9 h2 {
   margin-top: 50px;
   font-family: BebasNeue;
-  font-size: 50px;
+  font-size: 2.9vw;
   color: #000;
   font-weight: bold;
   padding-left: 15px;
@@ -712,7 +712,7 @@ background: linear-gradient(90deg, rgba(237,32,39,1) 49%, rgba(151,28,31,1) 100%
 .page10 h2 {
   margin-top: 50px;
   font-family: BebasNeue;
-  font-size: 50px;
+  font-size: 2.9vw;
   color: #000;
   font-weight: bold;
   padding-left: 15px;
@@ -913,7 +913,7 @@ background: linear-gradient(90deg, rgba(237,32,39,1) 49%, rgba(151,28,31,1) 100%
 .page12 h2 {
   margin-top: 50px;
   font-family: BebasNeue;
-  font-size: 50px;
+  font-size: 2.9vw;
   color: #000;
   font-weight: bold;
   padding-left: 15px;
@@ -1037,7 +1037,7 @@ background: linear-gradient(90deg, rgba(237,32,39,1) 49%, rgba(151,28,31,1) 100%
 .page13 h2 {
   margin-top: 50px;
   font-family: BebasNeue;
-  font-size: 50px;
+  font-size: 2.9vw;
   color: #fff;
   font-weight: bold;
 
@@ -1175,7 +1175,7 @@ background: linear-gradient(90deg, rgba(237,32,39,1) 49%, rgba(151,28,31,1) 100%
 .page14 h2 {
   margin-top: 50px;
   font-family: BebasNeue;
-  font-size: 50px;
+  font-size: 2.9vw;
   color: #fff;
   font-weight: bold;
 
@@ -1294,7 +1294,7 @@ label {
 .tpage15 h2 {
   margin-top: 50px;
   font-family: BebasNeue;
-  font-size: 50px;
+  font-size: 2.9vw;
   color: #000;
   font-weight: bold;
 
@@ -1385,7 +1385,7 @@ label {
 .page15 h2 {
   margin-top: 50px;
   font-family: BebasNeue;
-  font-size: 50px;
+  font-size: 2.9vw;
   color: #000;
   font-weight: bold;
   text-align: left;

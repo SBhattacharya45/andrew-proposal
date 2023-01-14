@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>SunLife Solar</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .program-page {
+            height: 100%;
+            padding-left: 50px;
+            padding-right: 50px;
+            background-image: url(images/video-ss-bg.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .program-page h2 {
+            margin: 0;
+            font-family: BebasNeue;
+            font-size: 2.9vw;
+            font-weight: bold;
+            padding: 0;
+            padding-right: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .program-table {
+            font-family: 'Poppins-light';
+            background-color: #fff;
+            padding: 15px 20px 20px 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 23px 20px #aaa2;
+            margin-top: 6vh;
+        }
+
+        .program-header-row {
+            display: flex;
+            gap: 10px;
+            width: 100%;
+            height: 11vh;
+            font-weight: bold;
+            font-size: 1.1vw;
+            text-transform: uppercase;
+            padding-bottom: 20px;
+        }
+
+        .program-header-row .label-block {
+            padding: 0;
+            display: flex;
+            text-align: center;
+        }
+
+        .program-header-row>div:not(:first-of-type) {
+            background: #faa553;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.3vw;
+        }
+
+        .program-data-row {
+            display: flex;
+            gap: 10px;
+            width: 100%;
+            height: 8vh;
+            font-size: 1vw;
+            align-items: center;
+        }
+
+        /* .program-data-row:nth-of-type(even) {
+            background-color: #eda75f33;
+        } */
+
+        .program-data-row > div {
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .program-data-row>div:not(:first-of-type) {
+            text-align: center;
+            justify-content: center;
+        }
+
+        .program-data-row:nth-of-type(even) > div {
+            background-color: #e7e7e9;
+            border-radius: 10px;
+        }
+
+        .program-data-row .fa-check {
+            color: #45b000;
+            font-size: 1.4vw;
+        }
+
+        .program-data-row .fa-xmark {
+            color: #db4437;
+            font-size: 1.4vw;
+        }
+
+        .label-block {
+            width: 40%;
+            padding-left: 20px;
+        }
+
+        .lease-block {
+            width: 20%;
+        }
+
+        .ppa-block {
+            width: 20%;
+        }
+
+        .owner-block {
+            width: 20%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="overlay" onclick="closeOverlay()">
+        <div id="nav-dialogue">
+            <div id="nav-top">
+                <div>Main Navigation</div>
+                <div id="nav-close-btn" onclick="closeNav()"
+                    style=" height: 55px; width: 55px; display:flex; align-items: center; justify-content: center; border-radius:10px; padding: 5px; background-color:#9AB4E1">
+                    <i style="font-size: 32px;" class="fa-regular fa-x"></i>
+                </div>
+            </div>
+            <div class="nav-content">
+                <div id="nav-first-row" class="nav-row">
+                    <div class="nav-block" onclick="navigateTo(1)">
+                        <div class="nav-block-img" style="background-image: url('./images/pg1-bg.jpg')"></div>
+                        <div class="nav-block-text">Welcome to SunLife</div>
+                    </div>
+                    <div class="nav-block" onclick="navigateTo(2)">
+                        <div class="nav-block-img" style="background-image: url('./images/pg2-bg.jpg')"></div>
+                        <div class="nav-block-text">Our Agenda</div>
+                    </div>
+                    <div class="nav-block" onclick="navigateTo(3)">
+                        <div class="nav-block-img" style="background-image: url('./images/pg3-bg.jpg')"></div>
+                        <div class="nav-block-text">Today's Discovery</div>
+                    </div>
+                    <div class="nav-block" onclick="navigateTo(4)">
+                        <div class="nav-block-img" style="background-image: url('./images/pg4-bg.jpg')"></div>
+                        <div class="nav-block-text">Household Names</div>
+                    </div>
+                    <div class="nav-block active-nav-block">
+                        <div class="nav-block-img" style="background-image: url('./images/pg5-bg.jpg')"></div>
+                        <div class="nav-block-text">More People Choose Solar</div>
+                    </div>
+                </div>
+                <div id="nav-second-row" class="nav-row">
+                    <div class="nav-block" onclick="navigateTo(6)">
+                        <div class="nav-block-img" style="background-image: url('./images/pg6-bg.jpg')"></div>
+                        <div class="nav-block-text">Inflation</div>
+                    </div>
+                    <div class="nav-block" onclick="navigateTo(7)">
+                        <div class="nav-block-img" style="background-image: url('./images/pg7-bg.jpg')"></div>
+                        <div class="nav-block-text">Traditional vs. Clean Energy</div>
+                    </div>
+                    <div class="nav-block" onclick="navigateTo(8)">
+                        <div class="nav-block-img" style="background-image: url('./images/pg8-bg.jpg')"></div>
+                        <div class="nav-block-text">How Clean Energy is Made</div>
+                    </div>
+                    <div class="nav-block" onclick="navigateTo(9)">
+                        <div class="nav-block-img" style="background-image: url('./images/pg9-bg.jpg')"></div>
+                        <div class="nav-block-text">The Solar Solution</div>
+                    </div>
+                    <div class="nav-block" onclick="navigateTo(10)">
+                        <div class="nav-block-img" style="background-image: url('./images/pg10-bg.jpg')"></div>
+                        <div class="nav-block-text">FAQs</div>
+                    </div>
+                </div>
+                <div id="nav-third-row" class="nav-row">
+                    <div class="nav-block" onclick="navigateTo(11)">
+                        <div class="nav-block-img" style="background-image: url('./images/pg11-bg.jpg')"></div>
+                        <div class="nav-block-text">Sunnova Protect</div>
+                    </div>
+                    <div class="nav-block" onclick="navigateTo(12)">
+                        <div class="nav-block-img" style="background-image: url('./images/pg12-bg.jpg')"></div>
+                        <div class="nav-block-text">SunLife Project Progress</div>
+                    </div>
+                    <div class="nav-block" onclick="navigateTo(13)">
+                        <div class="nav-block-img" style="background-image: url('./images/pg13-bg.jpg')"></div>
+                        <div class="nav-block-text">Get Paid by SunLife</div>
+                    </div>
+                    <div class="nav-block" onclick="navigateTo(14)">
+                        <div class="nav-block-img" style="background-image: url('./images/pg14-bg.jpg')"></div>
+                        <div class="nav-block-text">Next Steps</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid program-page sunslide">
+        <div class="row">
+            <!-- <div class="col-lg-12">
+                <h2>Program Comparisions</h2>
+            </div> -->
+            <div class="col-lg-12">
+                <div class="col-lg-12">
+                    <div class="program-table">
+                        <div class="program-header-row">
+                            <div class="label-block">
+                                <h2>Program Comparision</h2>
+                            </div>
+                            <div class="lease-block">Lease</div>
+                            <div class="ppa-block">PPA</div>
+                            <div class="owner-block">Ownership</div>
+                        </div>
+                        <div class="program-data-row">
+                            <div class="label-block">Payment</div>
+                            <div class="lease-block">Pay a flat monthly bill based on equipment cost</div>
+                            <div class="ppa-block">Pay for the power your system produces</div>
+                            <div class="owner-block">Pay a mothly bill based on an APR</div>
+                        </div>
+                        <div class="program-data-row">
+                            <div class="label-block">Billing</div>
+                            <div class="lease-block">Balanced</div>
+                            <div class="ppa-block">Balanced or Variable</div>
+                            <div class="owner-block">Balanced</div>
+                        </div>
+                        <div class="program-data-row">
+                            <div class="label-block">System Owner</div>
+                            <div class="lease-block">Financing company</div>
+                            <div class="ppa-block">Financing company</div>
+                            <div class="owner-block">You</div>
+                        </div>
+                        <div class="program-data-row">
+                            <div class="label-block">Insurer</div>
+                            <div class="lease-block">Financing company</div>
+                            <div class="ppa-block">Financing company</div>
+                            <div class="owner-block">You</div>
+                        </div>
+                        <div class="program-data-row">
+                            <div class="label-block">Upfront payment option</div>
+                            <div class="lease-block"><i class="fa-solid fa-xmark"></i></div>
+                            <div class="ppa-block"><i class="fa-solid fa-check"></i></div>
+                            <div class="owner-block"><i class="fa-solid fa-xmark"></i></div>
+                        </div>
+                        <div class="program-data-row">
+                            <div class="label-block">Eligibility of incentives</div>
+                            <div class="lease-block"><i class="fa-solid fa-xmark"></i></div>
+                            <div class="ppa-block"><i class="fa-solid fa-xmark"></i></div>
+                            <div class="owner-block"><i class="fa-solid fa-check"></i></div>
+                        </div>
+                        <div class="program-data-row">
+                            <div class="label-block">25 year system coverage</div>
+                            <div class="lease-block"><i class="fa-solid fa-check"></i></div>
+                            <div class="ppa-block"><i class="fa-solid fa-check"></i></div>
+                            <div class="owner-block"><i class="fa-solid fa-check"></i></div>
+                        </div>
+                        <div class="program-data-row">
+                            <div class="label-block">Energy guarantee</div>
+                            <div class="lease-block"><i class="fa-solid fa-check"></i></div>
+                            <div class="ppa-block"><i class="fa-solid fa-check"></i></div>
+                            <div class="owner-block"><i class="fa-solid fa-check"></i></div>
+                        </div>
+                        <div class="program-data-row">
+                            <div class="label-block">Roof replacement</div>
+                            <div class="lease-block"><i class="fa-solid fa-xmark"></i></div>
+                            <div class="ppa-block"><i class="fa-solid fa-xmark"></i></div>
+                            <div class="owner-block"><i class="fa-solid fa-check"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="navmenu-icon">
+        <i class="fa-solid fa-bars" onclick="openNav()"></i>
+    </div>
+    <div class="container-fluid backicon">
+        <div class="container text-center">
+            <div class="row">
+                <a href="page4.html" id="leftPicture" class="arrow-leftright"><img src="images/back.png"
+                        class="img-responsive backpp" /></a>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid nexticon">
+        <div class="container text-center">
+            <div class="row">
+                <a href="page6.html" id="rightPicture" class="arrow-leftright"><img src="images/nicon.png"
+                        class="img-responsive nextpp" /></a>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/common.js"></script>
+
+</html>
