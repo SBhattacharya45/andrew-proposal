@@ -13,20 +13,24 @@
     <style>
         .partner-page {
             height: 100%;
-            padding-left: 50px;
-            padding-right: 50px;
-            background-image: url(images/page14banner.png);
+            padding-left: 3vw;
+            padding-right: 3vw;
+            /* background-image: url(images/page14banner.png); */
             background-repeat: no-repeat;
             background-size: cover;
         }
 
         .partner-page h2 {
-            margin-top: 50px;
-            font-family: BebasNeue;
+            margin-top: 5vh;
+            font-family: 'BebasNeue';
             font-size: 2.9vw;
             font-weight: bold;
-            padding-left: 15px;
-            padding-right: 15px;
+            padding: 5px 15px;
+            text-align: center;
+            background: green;
+            border-radius: 10px;
+            color: #fff;
+            margin-bottom: 3vh;
         }
 
         .partners-block {
@@ -72,13 +76,136 @@
             max-width: 100%;
         }
 
-        .logo-img-block:not(:first-of-type) {
+        /* .logo-img-block:not(:first-of-type) {
             margin-top: 2vh;
-        }
+        } */
 
         img.logo-img {
             height: 100%;
             max-width: 100%;
+        }
+
+        /* for new design */
+
+        .partners-block-2 {
+            position: relative;
+            font-family: 'Poppins-light';
+        }
+
+        .partners-block-2>div {
+            position: absolute;
+        }
+
+        .logo-center {
+            top: 24vh;
+            left: 39vw;
+            width: 15vw;
+        }
+
+        .logo-center img {
+            width: 100%;
+        }
+
+        .moni-block {
+            top: 47vh;
+            left: 38vw;
+        }
+
+        .install-block {
+            top: 47vh;
+        }
+
+        .war-block {
+            top: 47vh;
+            left: 77vw;
+        }
+
+        .fin-block {
+            left: 77vw;
+        }
+
+        .partner-block {
+            width: 17vw;
+        }
+
+        .partner-block-sub {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            gap: 15px 10px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-img-block {
+            height: 5vh;
+            max-width: 100%;
+        }
+
+        .partner-block-header {
+            display: flex;
+            flex-flow: column;
+            gap: 5px;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .partner-block-icon>img {
+            width: 100%;
+        }
+
+        .partner-block-icon {
+            width: 4vw;
+        }
+
+        .partner-block-title {
+            font-size: 1.3vw;
+            font-weight: bold;
+        }
+
+        .manu-line {
+            height: 2px;
+            width: 17vw;
+            background: #51a447;
+            rotate: 14deg;
+            top: 11vw;
+            left: 19.5vw;
+        }
+
+        .install-line {
+            height: 2px;
+            width: 19vw;
+            background: #d9ad51;
+            rotate: -33deg;
+            top: 22vw;
+            left: 18.5vw;
+        }
+
+        .moni-line {
+            height: 2px;
+            width: 5vw;
+            background: #65a3da;
+            rotate: 90deg;
+            top: 19vw;
+            left: 44vw;
+        }
+
+        .war-line {
+            height: 2px;
+            width: 20vw;
+            background: #a7e9d8;
+            rotate: 26deg;
+            top: 21vw;
+            left: 57.5vw;
+        }
+
+        .fin-line {
+            height: 2px;
+            width: 19vw;
+            background: #e2d561;
+            rotate: -14deg;
+            top: 11.1vw;
+            left: 57.5vw;
         }
     </style>
 </head>
@@ -166,7 +293,7 @@
             </div>
             <div class="col-lg-12">
                 <div class="col-lg-12">
-                    <div class="partners-block">
+                    <div class="partners-block" style="display: none;">
                         <div id="man-col">
                             <div class="partner-stage" style="background-color: #4188c0">
                                 <i class="fa-solid fa-industry"></i>
@@ -250,6 +377,129 @@
                                 <span>Warranty</span>
                             </div>
                             <div class="partner-logos" style="border: 2px solid #d87f03; background-color: #FAF2E9;">
+                                <div class="logo-img-block">
+                                    <img src="./images/partner-logo/sunnova.png" alt="" class="logo-img">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="partners-block-2">
+                        <div class="logo-center">
+                            <img src="./images/sunlife-logo.png" alt="">
+                        </div>
+                        <div class="manu-line">
+                        </div>
+                        <div class="install-line">
+                        </div>
+                        <div class="war-line">
+                        </div>
+                        <div class="fin-line">
+                        </div>
+                        <div class="moni-line">
+                        </div>
+                        <div class="man-block partner-block">
+                            <div class="partner-block-header">
+                                <div class="partner-block-icon">
+                                    <img src="./images/partner-logo/manu-icon-transformed.png" alt="">
+                                </div>
+                                <div class="partner-block-title">
+                                    Manufacturing
+                                </div>
+                            </div>
+                            <div class="partner-block-sub">
+                                <div class="logo-img-block">
+                                    <img src="./images/partner-logo/sunpower.png" alt="" class="logo-img">
+                                </div>
+                                <div class="logo-img-block">
+                                    <img src="./images/partner-logo/aptos.png" alt="" class="logo-img">
+                                </div>
+                                <div class="logo-img-block">
+                                    <img src="./images/partner-logo/qcells.png" alt="" class="logo-img">
+                                </div>
+                                <div class="logo-img-block">
+                                    <img src="./images/partner-logo/rec.png" alt="" class="logo-img">
+                                </div>
+                                <div class="logo-img-block">
+                                    <img src="./images/partner-logo/jasolar.png" alt="" class="logo-img">
+                                </div>
+                                <div class="logo-img-block">
+                                    <img src="./images/partner-logo/canadiansolar.png" alt="" class="logo-img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fin-block partner-block">
+                            <div class="partner-block-header">
+                                <div class="partner-block-icon">
+                                    <img src="./images/partner-logo/fin-icon.png" alt="">
+                                </div>
+                                <div class="partner-block-title">
+                                    Financing
+                                </div>
+                            </div>
+                            <div class="partner-block-sub">
+                                <div class="logo-img-block" style="height: 8vh;">
+                                    <img src="./images/partner-logo/tcu.png" alt="" class="logo-img">
+                                </div>
+                                <div class="logo-img-block" style="height: 8vh;">
+                                    <img src="./images/partner-logo/mosaic.png" alt="" class="logo-img">
+                                </div>
+                                <div class="logo-img-block">
+                                    <img src="./images/partner-logo/sunnova.png" alt="" class="logo-img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="install-block partner-block">
+                            <div class="partner-block-header">
+                                <div class="partner-block-icon">
+                                    <img src="./images/partner-logo/install-icon.png" alt="">
+                                </div>
+                                <div class="partner-block-title">
+                                    Installation
+                                </div>
+                            </div>
+                            <div class="partner-block-sub">
+                                <div class="logo-img-block">
+                                    <img src="./images/partner-logo/hytech.png" alt="" class="logo-img">
+                                </div>
+                                <div class="logo-img-block">
+                                    <img src="./images/partner-logo/lunex.png" alt="" class="logo-img">
+                                </div>
+                                <div class="logo-img-block" style="height: 8vh;">
+                                    <img src="./images/partner-logo/skyline.png" alt="" class="logo-img">
+                                </div>
+                                <div class="logo-img-block" style="height: 8vh;">
+                                    <img src="./images/partner-logo/infinity.png" alt="" class="logo-img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="moni-block partner-block">
+                            <div class="partner-block-header">
+                                <div class="partner-block-icon">
+                                    <img src="./images/partner-logo/moni-icon.png" alt="">
+                                </div>
+                                <div class="partner-block-title">
+                                    Monitoring
+                                </div>
+                            </div>
+                            <div class="partner-block-sub">
+                                <div class="logo-img-block">
+                                    <img src="./images/partner-logo/solaredge.png" alt="" class="logo-img">
+                                </div>
+                                <div class="logo-img-block">
+                                    <img src="./images/partner-logo/enphase.png" alt="" class="logo-img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="war-block partner-block">
+                            <div class="partner-block-header">
+                                <div class="partner-block-icon">
+                                    <img src="./images/partner-logo/war-icon.png" alt="">
+                                </div>
+                                <div class="partner-block-title">
+                                    Warranty
+                                </div>
+                            </div>
+                            <div class="partner-block-sub">
                                 <div class="logo-img-block">
                                     <img src="./images/partner-logo/sunnova.png" alt="" class="logo-img">
                                 </div>
