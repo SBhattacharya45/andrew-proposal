@@ -48,11 +48,7 @@ function toggleGrowthChart() {
   $('#growth-chart-dialogue').toggleClass('open-nav-dialogue');
 }
 
-function navigateTo(num) {
-  if(num == 1) {
-    window.location.replace(`index.html`);
-  } else {
-    window.location.replace(`page${num}.html`);
-  }
+function navigateTo(pageName) {
+    window.location.replace(`${pageName}.html`);
 }
 
