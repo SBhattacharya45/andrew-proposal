@@ -1,110 +1,433 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title> SunLife Solar</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="viewport" content="width=device-width, user-scalable=1, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
-    <script src="https://codepen.io/grayghostvisuals/pen/a08e0d79c150ff5030f9b6afaa137749.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <div id="overlay" onclick="closeOverlay()">
-      <div id="nav-dialogue">
-          <div id="nav-top">
-              <div>Main Navigation</div>
-              <div id="nav-close-btn" onclick="closeNav()"
-                  style=" height: 55px; width: 55px; display:flex; align-items: center; justify-content: center; border-radius:10px; padding: 5px; background-color:#9AB4E1">
-                  <i style="font-size: 32px;" class="fa-regular fa-x"></i></div>
+
+<head>
+  <title> SunLife Solar</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, user-scalable=1, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+  <script src="https://codepen.io/grayghostvisuals/pen/a08e0d79c150ff5030f9b6afaa137749.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    h2 {
+      margin-top: 5vh;
+      font-family: 'BebasNeue';
+      font-size: 2.9vw;
+      font-weight: bold;
+      padding: 5px 15px;
+      text-align: center;
+      margin-bottom: 3vh;
+    }
+
+    .tvs-container {
+      display: flex;
+      width: 100%;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      justify-content: space-between;
+      font-family: Poppins-Light;
+    }
+
+    .tvs-sub {
+      width: 49%;
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      gap: 40px;
+      padding: 40px 0;
+    }
+
+    div#tvs-trad {
+      background: linear-gradient(180deg, #97D7FE55 40%, #E1ECED 40%);
+    }
+
+    div#tvs-solar {
+      background: linear-gradient(180deg, #97D7FE55 40%, #003C3C 40%);
+    }
+
+    .tvs-header>i {
+      font-size: 22px;
+    }
+
+    .tvs-header {
+      display: flex;
+      gap: 0 10px;
+      align-items: center;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .tvs-img {
+      width: 96%;
+      max-width: 450px;
+    }
+
+    .tvs-img>img {
+      width: 100%;
+    }
+
+    .tvs-stats {
+      display: flex;
+      flex-flow: column;
+      gap: 20px;
+    }
+
+    .tvs-stat-block>i {
+      font-size: 24px;
+    }
+
+    .tvs-stat-block {
+      display: flex;
+      align-items: center;
+      font-size: 19px;
+      gap: 15px;
+    }
+
+    div#tvs-trad .tvs-swipe-mobile {
+      border: 2px solid #003C3C;
+      padding: 10px;
+      border-radius: 20px;
+      font-weight: bold;
+      display: none;
+    }
+
+    div#tvs-solar .tvs-swipe-mobile {
+      border: 2px solid var(--bright);
+      padding: 10px;
+      border-radius: 20px;
+      font-weight: bold;
+      color: var(--bright);
+      display: none;
+    }
+
+    div#tvs-solar .tvs-stat-block {
+      color: #fff;
+    }
+
+    #chart-overlay {
+      width: 100%;
+      height: 100%;
+      background-color: #00000099;
+      position: fixed;
+      z-index: 5000;
+      display: none;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    /* for slider */
+    .slider-data-heading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 17px;
+      font-weight: bold;
+    }
+
+    .slider-data-block {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+    }
+
+    .slider-dialogue {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 40px;
+      background: #fff;
+      width: 97vw;
+      border-radius: 10px;
+      padding: 3vh 0;
+      position: relative;
+    }
+
+    .slider-x {
+      position: absolute;
+      right: 20px;
+      top: 1.5vh;
+      font-size: 18px;
+      color: #878787;
+    }
+
+    .slider-data {
+      width: 160px;
+      padding: 20px;
+      display: flex;
+      flex-flow: column;
+      gap: 20px;
+      padding: 20px;
+      justify-content: center;
+    }
+
+    .chart-slider-container {
+      width: calc(100% - 400px);
+    }
+
+    .slider-data-label {
+      color: var(--dark);
+      font-weight: bold;
+      margin-bottom: 7px;
+      text-align: center;
+    }
+
+    .slider-data-value {
+      font-size: 23px;
+      font-weight: bold;
+    }
+
+    #solar-savings {
+      color: #db4437;
+    }
+
+    #solar-savings.savings-green {
+      color: #00dc81;
+    }
+
+    #trad-month-pay,
+    #trad-outgoings {
+      color: #db4437
+    }
+
+    /* for chart slider */
+
+    #chart-range {
+      -webkit-appearance: none;
+      margin: 18px 0;
+      width: 99.4%;
+    }
+
+    #chart-range:focus {
+      outline: none;
+    }
+
+    #chart-range::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 3px;
+      cursor: pointer;
+      background: #bebebe;
+      border-radius: 1.3px;
+      border: 0.2px solid #bebebe33;
+    }
+
+    #chart-range::-webkit-slider-thumb {
+      border: 1px solid #000000;
+      height: 36px;
+      width: 16px;
+      border-radius: 3px;
+      background: #ffffff;
+      cursor: pointer;
+      -webkit-appearance: none;
+      margin-top: -17px;
+    }
+
+    #chart-range:focus::-webkit-slider-runnable-track {
+      background: #bebebe;
+    }
+
+    #chart-range::-moz-range-track {
+      width: 100%;
+      height: 3px;
+      cursor: pointer;
+      background: #bebebe;
+      border-radius: 1.3px;
+      border: 0.2px solid #bebebe33;
+    }
+
+    #chart-range::-moz-range-thumb {
+      border: 1px solid #000000;
+      height: 36px;
+      width: 16px;
+      border-radius: 3px;
+      background: #ffffff;
+      cursor: pointer;
+    }
+
+    #chart-range::-ms-track {
+      width: 100%;
+      height: 3px;
+      cursor: pointer;
+      background: transparent;
+      border-color: transparent;
+      border-width: 16px 0;
+      color: transparent;
+    }
+
+    #chart-range::-ms-fill-lower {
+      background: #2a6495;
+      border: 0.2px solid #bebebe33;
+      border-radius: 2.6px;
+    }
+
+    #chart-range::-ms-fill-upper {
+      background: #bebebe;
+      border: 0.2px solid #bebebe33;
+      border-radius: 2.6px;
+    }
+
+    #chart-range::-ms-thumb {
+      border: 1px solid #000000;
+      height: 36px;
+      width: 16px;
+      border-radius: 3px;
+      background: #ffffff;
+      cursor: pointer;
+    }
+
+    #chart-range:focus::-ms-fill-lower {
+      background: #bebebe;
+    }
+
+    #chart-range:focus::-ms-fill-upper {
+      background: #367ebd;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="overlay" onclick="closeOverlay()">
+    <div id="nav-dialogue">
+      <div id="nav-top">
+        <div>Main Navigation</div>
+        <div id="nav-close-btn" onclick="closeNav()"
+          style=" height: 55px; width: 55px; display:flex; align-items: center; justify-content: center; border-radius:10px; padding: 5px; background-color:#9AB4E1">
+          <i style="font-size: 32px;" class="fa-regular fa-x"></i>
+        </div>
+      </div>
+      <div class="nav-content">
+        <div id="nav-first-row" class="nav-row">
+          <div class="nav-block" onclick="navigateTo('index')">
+            <div class="nav-block-img" style="background-image: url('./images/pg1-bg.jpg')"></div>
+            <div class="nav-block-text">Welcome to SunLife</div>
           </div>
-          <div class="nav-content">
-            <div id="nav-first-row" class="nav-row">
-                <div class="nav-block" onclick="navigateTo('index')">
-                    <div class="nav-block-img" style="background-image: url('./images/pg1-bg.jpg')"></div>
-                    <div class="nav-block-text">Welcome to SunLife</div>
-                </div>
-                <div class="nav-block" onclick="navigateTo('agenda')">
-                    <div class="nav-block-img" style="background-image: url('./images/pg2-bg.jpg')"></div>
-                    <div class="nav-block-text">Our Agenda</div>
-                </div>
-                <div class="nav-block" onclick="navigateTo('discovery')">
-                    <div class="nav-block-img" style="background-image: url('./images/pg3-bg.jpg')"></div>
-                    <div class="nav-block-text">Today's Discovery</div>
-                </div>
-                <div class="nav-block" onclick="navigateTo('program-comp')">
-                    <div class="nav-block-img" style="background-image: url('./images/prog-comp-bg.png')"></div>
-                    <div class="nav-block-text">Program Comparision</div>
-                </div>
-                <div class="nav-block" onclick="navigateTo('about-sunlife')">
-                    <div class="nav-block-img" style="background-image: url('./images/about-bg.png')"></div>
-                    <div class="nav-block-text">About Sunlife</div>
-                </div>
-                <div class="nav-block" onclick="navigateTo('sunlife-mission')">
-                  <div class="nav-block-img" style="background-image: url('./images/mission-bg.png')"></div>
-                  <div class="nav-block-text">Sunlife Mission</div>
-                </div>
-            </div>
-            <div id="nav-second-row" class="nav-row">
-              <div class="nav-block" onclick="navigateTo('partners')">
-                  <div class="nav-block-img" style="background-image: url('./images/partners-bg.png')"></div>
-                  <div class="nav-block-text">Our Partners</div>
-              </div>
-                <div class="nav-block" onclick="navigateTo('household')">
-                    <div class="nav-block-img" style="background-image: url('./images/pg4-bg.jpg')"></div>
-                    <div class="nav-block-text">Household Names</div>
-                </div>
-                <div class="nav-block" onclick="navigateTo('choose-solar')">
-                    <div class="nav-block-img" style="background-image: url('./images/pg5-bg.jpg')"></div>
-                    <div class="nav-block-text">More People Choose Solar</div>
-                </div>
-                <div class="nav-block" onclick="navigateTo('inflation')">
-                    <div class="nav-block-img" style="background-image: url('./images/pg6-bg.jpg')"></div>
-                    <div class="nav-block-text">Inflation</div>
-                </div>
-                <div class="nav-block active-nav-block">
-                    <div class="nav-block-img" style="background-image: url('./images/pg7-bg.jpg')"></div>
-                    <div class="nav-block-text">Traditional vs. Clean Energy</div>
-                </div>
-                <div class="nav-block" onclick="navigateTo('clean-energy')">
-                    <div class="nav-block-img" style="background-image: url('./images/pg8-bg.jpg')"></div>
-                    <div class="nav-block-text">How Clean Energy is Made</div>
-                </div>
-            </div>
-            <div id="nav-third-row" class="nav-row">
-                <div class="nav-block" onclick="navigateTo('solution')">
-                    <div class="nav-block-img" style="background-image: url('./images/pg9-bg.jpg')"></div>
-                    <div class="nav-block-text">The Solar Solution</div>
-                </div>
-                <div class="nav-block" onclick="navigateTo('faq')">
-                    <div class="nav-block-img" style="background-image: url('./images/pg10-bg.jpg')"></div>
-                    <div class="nav-block-text">FAQs</div>
-                </div>
-                <div class="nav-block" onclick="navigateTo('sunnova-protect')">
-                    <div class="nav-block-img" style="background-image: url('./images/pg11-bg.jpg')"></div>
-                    <div class="nav-block-text">Sunnova Protect</div>
-                </div>
-                <div class="nav-block" onclick="navigateTo('project-progress')">
-                    <div class="nav-block-img" style="background-image: url('./images/pg12-bg.jpg')"></div>
-                    <div class="nav-block-text">SunLife Project Progress</div>
-                </div>
-                <div class="nav-block" onclick="navigateTo('get-paid')">
-                    <div class="nav-block-img" style="background-image: url('./images/pg13-bg.jpg')"></div>
-                    <div class="nav-block-text">Get Paid by SunLife</div>
-                </div>
-                <div class="nav-block" onclick="navigateTo('next-steps')">
-                    <div class="nav-block-img" style="background-image: url('./images/pg14-bg.jpg')"></div>
-                    <div class="nav-block-text">Next Steps</div>
-                </div>
-            </div>
+          <div class="nav-block" onclick="navigateTo('agenda')">
+            <div class="nav-block-img" style="background-image: url('./images/pg2-bg.jpg')"></div>
+            <div class="nav-block-text">Our Agenda</div>
           </div>
+          <div class="nav-block" onclick="navigateTo('discovery')">
+            <div class="nav-block-img" style="background-image: url('./images/pg3-bg.jpg')"></div>
+            <div class="nav-block-text">Today's Discovery</div>
+          </div>
+          <div class="nav-block" onclick="navigateTo('program-comp')">
+            <div class="nav-block-img" style="background-image: url('./images/prog-comp-bg.png')"></div>
+            <div class="nav-block-text">Program Comparision</div>
+          </div>
+          <div class="nav-block" onclick="navigateTo('about-sunlife')">
+            <div class="nav-block-img" style="background-image: url('./images/about-bg.png')"></div>
+            <div class="nav-block-text">About Sunlife</div>
+          </div>
+          <div class="nav-block" onclick="navigateTo('sunlife-mission')">
+            <div class="nav-block-img" style="background-image: url('./images/mission-bg.png')"></div>
+            <div class="nav-block-text">Sunlife Mission</div>
+          </div>
+        </div>
+        <div id="nav-second-row" class="nav-row">
+          <div class="nav-block" onclick="navigateTo('partners')">
+            <div class="nav-block-img" style="background-image: url('./images/partners-bg.png')"></div>
+            <div class="nav-block-text">Our Partners</div>
+          </div>
+          <div class="nav-block" onclick="navigateTo('household')">
+            <div class="nav-block-img" style="background-image: url('./images/pg4-bg.jpg')"></div>
+            <div class="nav-block-text">Household Names</div>
+          </div>
+          <div class="nav-block" onclick="navigateTo('choose-solar')">
+            <div class="nav-block-img" style="background-image: url('./images/pg5-bg.jpg')"></div>
+            <div class="nav-block-text">More People Choose Solar</div>
+          </div>
+          <div class="nav-block" onclick="navigateTo('inflation')">
+            <div class="nav-block-img" style="background-image: url('./images/pg6-bg.jpg')"></div>
+            <div class="nav-block-text">Inflation</div>
+          </div>
+          <div class="nav-block active-nav-block">
+            <div class="nav-block-img" style="background-image: url('./images/pg7-bg.jpg')"></div>
+            <div class="nav-block-text">Traditional vs. Clean Energy</div>
+          </div>
+          <div class="nav-block" onclick="navigateTo('clean-energy')">
+            <div class="nav-block-img" style="background-image: url('./images/pg8-bg.jpg')"></div>
+            <div class="nav-block-text">How Clean Energy is Made</div>
+          </div>
+        </div>
+        <div id="nav-third-row" class="nav-row">
+          <div class="nav-block" onclick="navigateTo('solution')">
+            <div class="nav-block-img" style="background-image: url('./images/pg9-bg.jpg')"></div>
+            <div class="nav-block-text">The Solar Solution</div>
+          </div>
+          <div class="nav-block" onclick="navigateTo('faq')">
+            <div class="nav-block-img" style="background-image: url('./images/pg10-bg.jpg')"></div>
+            <div class="nav-block-text">FAQs</div>
+          </div>
+          <div class="nav-block" onclick="navigateTo('sunnova-protect')">
+            <div class="nav-block-img" style="background-image: url('./images/pg11-bg.jpg')"></div>
+            <div class="nav-block-text">Sunnova Protect</div>
+          </div>
+          <div class="nav-block" onclick="navigateTo('project-progress')">
+            <div class="nav-block-img" style="background-image: url('./images/pg12-bg.jpg')"></div>
+            <div class="nav-block-text">SunLife Project Progress</div>
+          </div>
+          <div class="nav-block" onclick="navigateTo('get-paid')">
+            <div class="nav-block-img" style="background-image: url('./images/pg13-bg.jpg')"></div>
+            <div class="nav-block-text">Get Paid by SunLife</div>
+          </div>
+          <div class="nav-block" onclick="navigateTo('next-steps')">
+            <div class="nav-block-img" style="background-image: url('./images/pg14-bg.jpg')"></div>
+            <div class="nav-block-text">Next Steps</div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="container-fluid page8 sunslide">
+  </div>
+  <div id="chart-overlay">
+    <div class="slider-dialogue">
+      <div class="slider-x" onclick="closeChartPopup()">
+        <i class="fa-solid fa-x"></i>
+      </div>
+      <div class="slider-data">
+        <div class="slider-data-heading">
+          <i class="fa-solid fa-utility-pole-double" style="color: #db4437;"></i>
+          <div>Traditional</div>
+        </div>
+
+        <div class="slider-data-block">
+          <div class="slider-data-label">Monthly Payment</div>
+          <div class="slider-data-value" id="trad-month-pay">$ 191</div>
+        </div>
+        <div class="slider-data-block">
+          <div class="slider-data-label">Your Outgoings</div>
+          <div class="slider-data-value" id="trad-outgoings">$ 37,198</div>
+        </div>
+      </div>
+      <div class="chart-slider-container">
+        <div style="width: 100%;">
+          <canvas id="slider-chart"></canvas>
+        </div>
+        <div>
+          <input type="range" name="slider" id="chart-range" max="25" min="1" value="25" oninput="updatechart(this)">
+        </div>
+        <div class="chart-scale"></div>
+      </div>
+      <div class="slider-data">
+        <div class="slider-data-heading">
+          <i class="fa-solid fa-brightness" style="color: #f4b70a;"></i>
+          <div>Solar</div>
+        </div>
+
+        <div class="slider-data-block">
+          <div class="slider-data-label">Monthly Payment</div>
+          <div class="slider-data-value" id="solar-month-pay">$ 0</div>
+        </div>
+        <div class="slider-data-block">
+          <div class="slider-data-label">Your Savings</div>
+          <div class="slider-data-value savings-green" id="solar-savings">$ 23,571</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="container-fluid page8 sunslide">
       <div class="row">
         <div class="col-lg-12 page8mainheading">
           <h2>which would you choose?</h2>
@@ -208,34 +531,162 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="navmenu-icon">
-      <i class="fa-solid fa-bars" onclick="openNav()"></i>
-    </div>
-    <div class="container-fluid backicon">
-      <div class="container text-center">
-        <div class="row" >
-          <a href="inflation.html" id="leftPicture" class="arrow-leftright"><img src="images/back.png" class="img-responsive backpp"/></a>
+    </div> -->
+  <div class="container">
+    <h2>Which Would You Choose?</h2>
+    <div class="tvs-container">
+      <div id="tvs-trad" class="tvs-sub" onclick="openChartPopup()">
+        <div class="tvs-header">
+          <i class="fa-solid fa-utility-pole-double" style="color: #db4437;"></i>
+          <div>TRADITIONAL</div>
+        </div>
+        <div class="tvs-img">
+          <img src="./images/tvs-trad.png" alt="">
+        </div>
+        <div class="tvs-stats">
+          <div class="tvs-stat-block">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <div class="tvs-stat-txt">Dirty Energy</div>
+          </div>
+          <div class="tvs-stat-block">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <div class="tvs-stat-txt">Fluctuating monthly payment</div>
+          </div>
+          <div class="tvs-stat-block">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <div class="tvs-stat-txt">Uncontrolled rising costs</div>
+          </div>
+        </div>
+        <div class="tvs-swipe-mobile">
+          Swipe to go solar &nbsp;&nbsp;<i class="fa-solid fa-chevron-right"></i>
+        </div>
+      </div>
+      <div id="tvs-solar" class="tvs-sub">
+        <div class="tvs-header">
+          <i class="fa-solid fa-brightness" style="color: #f4b70a;"></i>
+          <div>SOLAR</div>
+        </div>
+        <div class="tvs-img">
+          <img src="./images/tvs-solar.png" alt="">
+        </div>
+        <div class="tvs-stats">
+          <div class="tvs-stat-block">
+            <i class="fa-solid fa-circle-check"></i>
+            <div class="tvs-stat-txt">Environment Friendly</div>
+          </div>
+          <div class="tvs-stat-block">
+            <i class="fa-solid fa-circle-check"></i>
+            <div class="tvs-stat-txt">Payment control</div>
+          </div>
+          <div class="tvs-stat-block">
+            <i class="fa-solid fa-circle-check"></i>
+            <div class="tvs-stat-txt">Guaranteed long term savings</div>
+          </div>
+        </div>
+        <div class="tvs-swipe-mobile">
+          <i class="fa-solid fa-chevron-left"></i>&nbsp;&nbsp;Swipe to go traditional
         </div>
       </div>
     </div>
-    <div class="container-fluid nexticon">
-      <div class="container text-center">
-        <div class="row">
-          <a href="clean-energy.html"id="rightPicture" class="arrow-leftright"><img src="images/nicon.png" class="img-responsive nextpp" /></a>
-        </div>
+  </div>
+  <div class="navmenu-icon">
+    <i class="fa-solid fa-bars" onclick="openNav()"></i>
+  </div>
+  <div class="container-fluid backicon">
+    <div class="container text-center">
+      <div class="row">
+        <a href="inflation.html" id="leftPicture" class="arrow-leftright"><img src="images/back.png"
+            class="img-responsive backpp" /></a>
       </div>
     </div>
-  </body>
-  <script>
-    $("#p1").click(function() {
-      swapCharts('trad');
-    });
-    $("#p2").click(function() {
-      swapCharts('clean');
-    });
-  </script>
-    <script src="js/chart.js"></script>
-        <script src="js/common.js"></script>
+  </div>
+  <div class="container-fluid nexticon">
+    <div class="container text-center">
+      <div class="row">
+        <a href="clean-energy.html" id="rightPicture" class="arrow-leftright"><img src="images/nicon.png"
+            class="img-responsive nextpp" /></a>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  $("#p1").click(function () {
+    swapCharts('trad');
+  });
+  $("#p2").click(function () {
+    swapCharts('clean');
+  });
+
+  // setup for chart slider
+  const labels = ['2023', '2024', '2025', '2026', '2027', '2028', '2029', '2030', '2031', '2032', '2033', '2034', '2035', '2036', '2037', '2038', '2039', '2040', '2041', '2042', '2043', '2044', '2045', '2046', '2047',];
+  const dataArray = [-50, -45, -40, -35, -30, -25, -20, -15, -10, -5, 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70];
+
+  const tradPayArr = [60, 66, 72, 78, 84, 90, 96, 102, 108, 114, 120, 126, 132, 138, 144, 150, 156, 162, 168, 174, 180, 186, 192, 198, 204];
+  const tradOutArray = [100, 1099, 2098, 3097, 4096, 5095, 6094, 7093, 8092, 9091, 10090, 11089, 12088, 13087, 14086, 15085, 16084, 17083, 18082, 19081, 20080, 21079, 22078, 23077, 24076];
+  const solarSaveArr = [-18000, -16077, -14154, -12231, -10308, -8385, -6462, -4539, -2616, -693, 1230, 3153, 5076, 6999, 8922, 10845, 12768, 14691, 16614, 18537, 20460, 22383, 24306, 26229, 28152];
+  $('#trad-month-pay').html('$ ' + tradPayArr[dataArray.length - 1]);
+  $('#trad-outgoings').html('$ ' + tradOutArray[dataArray.length - 1]);
+  $('#solar-savings').html('$ ' + solarSaveArr[dataArray.length - 1]);
+  const data = {
+    labels,
+    datasets: [{
+      label: 'Weekly Sales',
+      data: dataArray,
+      borderColor: 'white',
+      borderWidth: 0,
+      fill: {
+        target: 'origin',
+        above: '#00DC81',
+        below: '#db4437'
+      },
+      tension: 0.4
+    }]
+  };
+
+  // config 
+  const config = {
+    type: 'line',
+    data,
+    options: {
+      plugins: {
+        legend: {
+          display: false,
+        },
+        tooltip: {
+          enabled: false,
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          display: false,
+          suggestedMax: dataArray[dataArray.length - 1],
+        }
+      }
+    }
+  };
+  const myChart = new Chart(
+    document.getElementById('slider-chart'),
+    config
+  );
+
+  function updatechart(range) {
+    console.log(range.value);
+    // const rangedvalue = labels.slice(0, range.value);
+    // myChart.config.data.labels = rangedvalue;
+    const rangedvalue = dataArray.slice(0, range.value);
+    $('#trad-month-pay').html('$ ' + tradPayArr[range.value - 1]);
+    $('#trad-outgoings').html('$ ' + tradOutArray[range.value - 1]);
+    if (solarSaveArr[range.value - 1] > 0) {
+      $('#solar-savings').html('$ ' + solarSaveArr[range.value - 1]).addClass('savings-green');
+    } else {
+      $('#solar-savings').html('$ ' + solarSaveArr[range.value - 1]).removeClass('savings-green');
+    }
+    myChart.config.data.datasets[0].data = rangedvalue;
+    myChart.update();
+  }
+</script>
+<script src="js/chart.js"></script>
+<script src="js/common.js"></script>
 
 </html>

@@ -52,3 +52,11 @@ function navigateTo(pageName) {
     window.location.replace(`${pageName}.html`);
 }
 
+function openChartPopup() {
+  $('#chart-overlay').addClass('open-overlay');
+}
+
+function closeChartPopup() {
+  $('#chart-overlay').removeClass('open-overlay');
+}
+
