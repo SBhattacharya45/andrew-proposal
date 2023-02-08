@@ -126,7 +126,7 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
-      font-size: 17px;
+      font-size: 1.3vw;
       font-weight: bold;
     }
 
@@ -138,35 +138,48 @@
 
     .slider-dialogue {
       display: flex;
-      justify-content: space-between;
-      margin-top: 40px;
+      flex-flow: column;
+      margin-top: 20px;
       background: #fff;
       width: 97vw;
       border-radius: 10px;
       padding: 3vh 0;
-      position: relative;
+      font-weight: bold;
+      font-family: Poppins-Light;
+    }
+
+    .slider-container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .slider-title {
+       font-size: 18px;
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       padding: 0 20px;
+       font-size: 1.2vw
     }
 
     .slider-x {
-      position: absolute;
-      right: 20px;
-      top: 1.5vh;
+      
       font-size: 18px;
       color: #878787;
     }
 
     .slider-data {
-      width: 160px;
-      padding: 20px;
+      width: 13vw;
       display: flex;
       flex-flow: column;
       gap: 20px;
-      padding: 20px;
+      padding: 1.2vw;
       justify-content: center;
     }
 
     .chart-slider-container {
-      width: calc(100% - 400px);
+      width: calc(100% - 28vw);
     }
 
     .slider-data-label {
@@ -174,23 +187,24 @@
       font-weight: bold;
       margin-bottom: 7px;
       text-align: center;
+      font-size: 1vw;
     }
 
     .slider-data-value {
-      font-size: 23px;
+      font-size: 1.5vw;
       font-weight: bold;
     }
 
-    #solar-savings {
+    #solar-annual {
       color: #db4437;
     }
 
-    #solar-savings.savings-green {
+    #solar-annual.savings-green {
       color: #00dc81;
     }
 
     #trad-month-pay,
-    #trad-outgoings {
+    #trad-annual {
       color: #db4437
     }
 
@@ -199,7 +213,7 @@
     #chart-range {
       -webkit-appearance: none;
       margin: 18px 0;
-      width: 99.4%;
+      width: 99.7%;
     }
 
     #chart-range:focus {
@@ -383,51 +397,54 @@
   </div>
   <div id="chart-overlay">
     <div class="slider-dialogue">
-      <div class="slider-x" onclick="closeChartPopup()">
-        <i class="fa-solid fa-x"></i>
-      </div>
-      <div class="slider-data">
-        <div class="slider-data-heading">
-          <i class="fa-solid fa-utility-pole-double" style="color: #db4437;"></i>
-          <div>Traditional</div>
-        </div>
-
-        <div class="slider-data-block">
-          <div class="slider-data-label">Monthly Payment</div>
-          <div class="slider-data-value" id="trad-month-pay">$ 191</div>
-        </div>
-        <div class="slider-data-block">
-          <div class="slider-data-label">Your Outgoings</div>
-          <div class="slider-data-value" id="trad-outgoings">$ 37,198</div>
+      <div class="slider-title">
+        <div>Estimated Electricity Charges Over Time</div>
+        <div class="slider-x" onclick="closeChartPopup()">
+          <i class="fa-solid fa-x"></i>
         </div>
       </div>
-      <div class="chart-slider-container">
-        <div style="width: 100%;">
-          <canvas id="slider-chart"></canvas>
+      <div class="slider-container">
+        <div class="slider-data">
+          <div class="slider-data-heading">
+            <i class="fa-solid fa-utility-pole-double" style="color: #db4437;"></i>
+            <div>Traditional</div>
+          </div>
+          <div class="slider-data-block">
+            <div class="slider-data-label">Monthly Payment</div>
+            <div class="slider-data-value" id="trad-month-pay">$ 191</div>
+          </div>
+          <div class="slider-data-block">
+            <div class="slider-data-label">Annual Payment</div>
+            <div class="slider-data-value" id="trad-annual">$ 37,198</div>
+          </div>
         </div>
-        <div>
-          <input type="range" name="slider" id="chart-range" max="25" min="1" value="25" oninput="updatechart(this)">
+        <div class="chart-slider-container">
+          <div style="width: 100%;">
+            <canvas id="slider-chart"></canvas>
+          </div>
+          <div>
+            <input type="range" name="slider" id="chart-range" max="30" min="1" value="30" oninput="updatechart(this)">
+          </div>
+          <div class="chart-scale"></div>
         </div>
-        <div class="chart-scale"></div>
-      </div>
-      <div class="slider-data">
-        <div class="slider-data-heading">
-          <i class="fa-solid fa-brightness" style="color: #f4b70a;"></i>
-          <div>Solar</div>
-        </div>
-
-        <div class="slider-data-block">
-          <div class="slider-data-label">Monthly Payment</div>
-          <div class="slider-data-value" id="solar-month-pay">$ 0</div>
-        </div>
-        <div class="slider-data-block">
-          <div class="slider-data-label">Your Savings</div>
-          <div class="slider-data-value savings-green" id="solar-savings">$ 23,571</div>
+        <div class="slider-data">
+          <div class="slider-data-heading">
+            <i class="fa-solid fa-brightness" style="color: #f4b70a;"></i>
+            <div>Solar</div>
+          </div>
+          <div class="slider-data-block">
+            <div class="slider-data-label">Monthly Payment</div>
+            <div class="slider-data-value" id="solar-month-pay">$ 0</div>
+          </div>
+          <div class="slider-data-block">
+            <div class="slider-data-label">Your Savings</div>
+            <div class="slider-data-value savings-green" id="solar-annual">$ 23,571</div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <!-- <div class="container-fluid page8 sunslide">
+  <div class="container-fluid page8 sunslide">
       <div class="row">
         <div class="col-lg-12 page8mainheading">
           <h2>which would you choose?</h2>
@@ -453,7 +470,7 @@
           <div class="col-lg-12 page8leftbottom">
             <div class="col-lg-2"></div>
             <div class="col-lg-8">
-              <a href="#" data-toggle="modal" data-target="#char1" data-dismiss="modal" id="p1">
+              <a href="#" onclick="openChartPopup()">
               <img src="images/p8left.png" class="img-responsive center-block" />
               </a>
             </div>
@@ -531,8 +548,8 @@
           </div>
         </div>
       </div>
-    </div> -->
-  <div class="container">
+    </div>
+  <!-- <div class="container">
     <h2>Which Would You Choose?</h2>
     <div class="tvs-container">
       <div id="tvs-trad" class="tvs-sub" onclick="openChartPopup()">
@@ -588,7 +605,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   <div class="navmenu-icon">
     <i class="fa-solid fa-bars" onclick="openNav()"></i>
   </div>
@@ -618,15 +635,17 @@
   });
 
   // setup for chart slider
-  const labels = ['2023', '2024', '2025', '2026', '2027', '2028', '2029', '2030', '2031', '2032', '2033', '2034', '2035', '2036', '2037', '2038', '2039', '2040', '2041', '2042', '2043', '2044', '2045', '2046', '2047',];
-  const dataArray = [-50, -45, -40, -35, -30, -25, -20, -15, -10, -5, 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70];
+  const labels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30];
+  const dataArray = [-75, -70, -65, -60, -55, -50, -45, -40, -35, -30, -25, -20, -15, -10, -5, 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70];
 
-  const tradPayArr = [60, 66, 72, 78, 84, 90, 96, 102, 108, 114, 120, 126, 132, 138, 144, 150, 156, 162, 168, 174, 180, 186, 192, 198, 204];
-  const tradOutArray = [100, 1099, 2098, 3097, 4096, 5095, 6094, 7093, 8092, 9091, 10090, 11089, 12088, 13087, 14086, 15085, 16084, 17083, 18082, 19081, 20080, 21079, 22078, 23077, 24076];
-  const solarSaveArr = [-18000, -16077, -14154, -12231, -10308, -8385, -6462, -4539, -2616, -693, 1230, 3153, 5076, 6999, 8922, 10845, 12768, 14691, 16614, 18537, 20460, 22383, 24306, 26229, 28152];
+  const tradPayArr = [200, 208, 216.32, 224.97, 233.97, 243.33, 253.06, 263.19, 273.71, 284.66, 296.05, 307.89, 320.21, 333.01, 346.34, 360.19, 374.6, 389.58, 405.16, 421.37, 438.22, 455.75, 473.98, 492.94, 512.66, 533.17, 554.49, 576.67, 599.74, 623.73];
+  const monthPayArr = [160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 20, 20, 20, 20, 20, 20];
+  const tradAnnualArr = [2400, 2496, 2595.84, 2699.67, 2807.66, 2919.97, 3036.77, 3158.24, 3284.57, 3415.95, 3552.59, 3694.69, 3842.48, 3996.18, 4156.02, 4322.26, 4495.15, 4674.96, 4861.96, 5056.44, 5258.7, 5469.04, 5687.81, 5915.32, 6151.93, 6398.01, 6653.93, 6920.08, 7196.89, 7484.76];
+  const solarAnnualArr = [1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 240, 240, 240, 240, 240, 240];
   $('#trad-month-pay').html('$ ' + tradPayArr[dataArray.length - 1]);
-  $('#trad-outgoings').html('$ ' + tradOutArray[dataArray.length - 1]);
-  $('#solar-savings').html('$ ' + solarSaveArr[dataArray.length - 1]);
+  $('#trad-annual').html('$ ' + tradAnnualArr[dataArray.length - 1]);
+  $('#solar-annual').html('$ ' + solarAnnualArr[dataArray.length - 1]);
+  $('#solar-month-pay').html('$ ' + monthPayArr[dataArray.length - 1]);
   const data = {
     labels,
     datasets: [{
@@ -676,11 +695,12 @@
     // myChart.config.data.labels = rangedvalue;
     const rangedvalue = dataArray.slice(0, range.value);
     $('#trad-month-pay').html('$ ' + tradPayArr[range.value - 1]);
-    $('#trad-outgoings').html('$ ' + tradOutArray[range.value - 1]);
-    if (solarSaveArr[range.value - 1] > 0) {
-      $('#solar-savings').html('$ ' + solarSaveArr[range.value - 1]).addClass('savings-green');
+    $('#trad-annual').html('$ ' + tradAnnualArr[range.value - 1]);
+    $('#solar-month-pay').html('$ ' + monthPayArr[range.value - 1]);
+    if (solarAnnualArr[range.value - 1] > 0) {
+      $('#solar-annual').html('$ ' + solarAnnualArr[range.value - 1]).addClass('savings-green');
     } else {
-      $('#solar-savings').html('$ ' + solarSaveArr[range.value - 1]).removeClass('savings-green');
+      $('#solar-annual').html('$ ' + solarAnnualArr[range.value - 1]).removeClass('savings-green');
     }
     myChart.config.data.datasets[0].data = rangedvalue;
     myChart.update();
