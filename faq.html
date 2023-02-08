@@ -107,394 +107,405 @@
         <div class="col-lg-12">
           <h2>frequently asked questions</h2>
         </div>
-        <div class="col-lg-2 page12-icons tab">
-          <li>
-            <a class="tablinks" onclick="openCity(event, 'Tokyo1')" id="defaultOpen">
-            <img src="images/icon-01.png" class="img-responsive center-block" />
-            </a>
-          </li>
-          <li>
-            <a class="tablinks" onclick="openCity(event, 'Tokyo2')">
-            <img src="images/icon-02.png" class="img-responsive center-block" />
-            </a>
-          </li>
-          <li>
-            <a class="tablinks" onclick="openCity(event, 'Tokyo3')">
-            <img src="images/icon-03.png" class="img-responsive center-block" />
-            </a>
-          </li>
-          <li>
-            <a class="tablinks" onclick="openCity(event, 'Tokyo4')">
-            <img src="images/icon-04.png" class="img-responsive center-block" />
-            </a>
-          </li>
-          <li>
-            <a class="tablinks" onclick="openCity(event, 'Tokyo5')">
-            <img src="images/icon-05.png" class="img-responsive center-block" />
-            </a>
-          </li>
-          <li>
-            <a class="tablinks" onclick="openCity(event, 'Tokyo6')">
-            <img src="images/icon-06.png" class="img-responsive center-block" />
-            </a>
-          </li>
-          <li>
-            <a class="tablinks" onclick="openCity(event, 'Tokyo7')">
-            <img src="images/icon-07.png" class="img-responsive center-block" />
-            </a>
-          </li>
-          <li>
-            <a class="tablinks" onclick="openCity(event, 'Tokyo8')">
-            <img src="images/icon-08.png" class="img-responsive center-block" />
-            </a>
-          </li>
+        <div style="display: flex;" class="col-lg-12">
+          <div class="page12-icons tab" style="width: 7vw;">
+            <li>
+              <a class="tablinks" onclick="openCity(event, 'Tokyo1')" id="defaultOpen">
+              <img src="images/icon-01.png" class="img-responsive center-block" />
+              </a>
+            </li>
+            <li>
+              <a class="tablinks" onclick="openCity(event, 'Tokyo2')">
+              <img src="images/icon-02.png" class="img-responsive center-block" />
+              </a>
+            </li>
+            <li>
+              <a class="tablinks" onclick="openCity(event, 'Tokyo3')">
+              <img src="images/icon-03.png" class="img-responsive center-block" />
+              </a>
+            </li>
+            <li>
+              <a class="tablinks" onclick="openCity(event, 'Tokyo4')">
+              <img src="images/icon-04.png" class="img-responsive center-block" />
+              </a>
+            </li>
+            <li>
+              <a class="tablinks" onclick="openCity(event, 'Tokyo5')">
+              <img src="images/icon-05.png" class="img-responsive center-block" />
+              </a>
+            </li>
+            <li>
+              <a class="tablinks" onclick="openCity(event, 'Tokyo6')">
+              <img src="images/icon-06.png" class="img-responsive center-block" />
+              </a>
+            </li>
+            <li>
+              <a class="tablinks" onclick="openCity(event, 'Tokyo7')">
+              <img src="images/icon-07.png" class="img-responsive center-block" />
+              </a>
+            </li>
+            <li>
+              <a class="tablinks" onclick="openCity(event, 'Tokyo8')">
+              <img src="images/icon-08.png" class="img-responsive center-block" />
+              </a>
+            </li>
+          </div>
+          <div class="col-lg-10" style="width: calc(100% - 8vw);">
+            <div id="Tokyo1" class="tabcontent">
+              <h3>Net Metering</h3>
+              <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingOne">
+                    <h4 class="panel-title">
+                      <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <p class="more-less">
+                          <img src="images/caret-01.png" class="img-responsive center-block"/>
+                        </p>
+                        What is net metering?
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="panel-body">
+                      <p>Net metering is an electric billing tool that uses the electric grid to store excess energy produced by your solar panel system, allowing your meter to spin backwards.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingTwo">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <p class="more-less">
+                          <img src="images/caret-01.png" class="img-responsive center-block"/>
+                        </p>
+                        Will I still have an electric bill from my utility company after going solar?
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                    <div class="panel-body">
+                      <p>
+                        Yes, even if your energy usage is 100% offset by going solar, you will still be connected to the grid to store your excess energy. Consider your utility company as your backup energy provider if your future needs change.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingThree">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <p class="more-less">
+                          <img src="images/caret-01.png" class="img-responsive center-block"/>
+                        </p>
+                        Do solar panels work in a blackout?
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                    <div class="panel-body">
+                      <p>
+                        When the grid is turned off, pair your solar panels with a battery to provide essential backup power.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- panel-group -->
+            </div>
+            <!-- end-->
+            <div id="Tokyo2" class="tabcontent">
+              <h3>Upfront Cost</h3>
+              <div class="panel-group" id="accordion2" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingFour">
+                    <h4 class="panel-title">
+                      <a role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                        <p class="more-less">
+                          <img src="images/caret-01.png" class="img-responsive center-block"/>
+                        </p>
+                        What are the upfront costs of going solar?
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                    <div class="panel-body">
+                      <p>
+                        Zero! Your monthly payment will come after the system is fully installed.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingFive">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        <p class="more-less">
+                          <img src="images/caret-01.png" class="img-responsive center-block"/>
+                        </p>
+                        How long does it take to get a return on my investment?
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                    <div class="panel-body">
+                      <p>
+                        Immediately! With our $0 out of pocket program, you should save in your very first month by redirecting the money you are already forced to pay your utility company. In addition, the longer you have solar panels, the larger your savings will be over time.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- panel-group -->
+            </div>
+            <!-- end-->
+            <div id="Tokyo3" class="tabcontent">
+              <h3>Credit</h3>
+              <div class="panel-group" id="accordion3" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingSix">
+                    <h4 class="panel-title">
+                      <a role="button" data-toggle="collapse" data-parent="#accordion3" href="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                        <p class="more-less">
+                          <img src="images/caret-01.png" class="img-responsive center-block"/>
+                        </p>
+                        If I own a solar panel system, will this affect my debt to income ratio?
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+                    <div class="panel-body">
+                      <p>
+                        No - this is just one of the benefits of working with Sunnova! When you make on time payments, the balance will show up as zero. The only time your DTI will be affected is if your payments become delinquent.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingSeven">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion3" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                        <p class="more-less">
+                          <img src="images/caret-01.png" class="img-responsive center-block"/>
+                        </p>
+                        Will my credit score be affected during the approval process?
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
+                    <div class="panel-body">
+                      <p>
+                        Only soft checks are conduted the first 30 days for all programs. Only the ownership option will convert to a hard inquiry 30 days later.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- panel-group -->
+            </div>
+            <!-- end-->
+            <div id="Tokyo4" class="tabcontent">
+              <h3>Moving</h3>
+              <div class="panel-group" id="accordion4" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingEight">
+                    <h4 class="panel-title">
+                      <a role="button" data-toggle="collapse" data-parent="#accordion4" href="#collapseEight" aria-expanded="true" aria-controls="collapseEight">
+                        <p class="more-less">
+                          <img src="images/caret-01.png" class="img-responsive center-block"/>
+                        </p>
+                        What happens if I move?
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">
+                    <div class="panel-body">
+                      <p>The ownership of the panels will transfer to the next homeowner. Most homeowners include the remaining balance in with the home price, or they can take over the low payments instead of paying the utilities for a higher cost of power. The longer you have the panels, the higher the utiliy's rate will be, and the more attractive your home will appear! Give us a call and we will custom fit your next home with the latest and greatest.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- panel-group -->
+            </div>
+            <!-- end-->
+            <div id="Tokyo5" class="tabcontent">
+              <h3>Warranty</h3>
+              <div class="panel-group" id="accordion5" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingNine">
+                    <h4 class="panel-title">
+                      <a role="button" data-toggle="collapse" data-parent="#accordion5" href="#collapseNine" aria-expanded="true" aria-controls="collapseNine">
+                        <p class="more-less">
+                          <img src="images/caret-01.png" class="img-responsive center-block"/>
+                        </p>
+                        What happens if my system stops producing?
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseNine" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingNine">
+                    <div class="panel-body">
+                      <p>
+                        Your warranty will cover any gaps in production. Warranties vary from product to product, so we are reachable at any time to go over the coverage with you.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- panel-group -->
+            </div>
+            <!-- end-->
+            <div id="Tokyo6" class="tabcontent">
+              <h3>Weather</h3>
+              <div class="panel-group" id="accordion6" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingTen">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion6" href="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                        <p class="more-less">
+                          <img src="images/caret-01.png" class="img-responsive center-block"/>
+                        </p>
+                        Do my solar panels produce power when the sun isn’t shining?
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseTen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTen">
+                    <div class="panel-body">
+                      <p>
+                        Just like when you don't wear sunscreen on a cloudy day, you can still get sun burned from the sun's powerful rays. Even on a cloudy day, our panels will still absorb the sun's energy. Our design software factors in historical weather patterns, guaranteeing panel performance.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingEleven">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion6" href="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
+                        <p class="more-less">
+                          <img src="images/caret-01.png" class="img-responsive center-block"/>
+                        </p>
+                        What happens if there is snow on solar panels?
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseEleven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEleven">
+                    <div class="panel-body">
+                      <p>
+                        Don't worry; you don't need to do a thing! The panels are durable and can hold the weight of the snow. Due to the tempered glass and energy from the panels, the snow will slide right off.
+                      </p>
+                      <img src="./images/solar-panel-snow.jpeg" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="Tokyo7" class="tabcontent">
+              <h3>Incentives</h3>
+              <div class="panel-group" id="accordion7" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingTwelve">
+                    <h4 class="panel-title">
+                      <a role="button" data-toggle="collapse" data-parent="#accordion7" href="#collapseTwelve" aria-expanded="true" aria-controls="collapseTwelve">
+                        <p class="more-less">
+                          <img src="images/caret-01.png" class="img-responsive center-block"/>
+                        </p>
+                        What are the incentives in New York?
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseTwelve" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwelve">
+                    <div class="panel-body">
+                      <p>
+                        "NY State Solar Energy System Equipment Tax Credit The 25% state solar tax credit is available for purchased home solar systems in New York. (Max. $5,000 state tax reduction) NY-Sun Megawatt (MW) Block Program Up to $1,000 for every kilowatt (kW) of solar power installed. Solar Electric Generating System Tax Abatement (SEGS) Property tax exemption on the added home value from a solar and storage system. Home Solar Project State Sales Tax Exemption 4% home solar system state sales tax exemption."
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingThirteen">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion7" href="#collapseThirteen" aria-expanded="false" aria-controls="collapseThirteen">
+                        <p class="more-less">
+                          <img src="images/caret-01.png" class="img-responsive center-block"/>
+                        </p>
+                        What are the incentives in New Jersey?
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseThirteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThirteen">
+                    <div class="panel-body">
+                      <p>
+                        "For every 1000 kWh your panels produce, you will earn a fixed $90 payment for 15 years (ownership option only). Your solar specialist will show you your custom home design. New Jersey residents that invest in a solar energy system will not have to pay any additional property taxes on the value that their solar panels are adding to their homes."
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingTwelve">
+                    <h4 class="panel-title">
+                      <a role="button" data-toggle="collapse" data-parent="#accordion7" href="#collapseFourteen" aria-expanded="true" aria-controls="collapseFourteen">
+                        <p class="more-less">
+                          <img src="images/caret-01.png" class="img-responsive center-block"/>
+                        </p>
+                        What are the incentives in New York City?
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseFourteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwelve">
+                    <div class="panel-body">
+                      <p>
+                        The NYC Property Tax Abatement for solar allows NYC homeowners to claim 20% of solar system costs as a property tax abatement with the NYC Department of Finance. It is divided into annual 5% installments over a four year cycle, not to exceed any one year’s property tax liability.
+                        <br><br>Be aware: the NYC PTA will only be available for projects installed through 2023.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- panel-group -->
+            </div>
+            <!-- end-->
+            <div id="Tokyo8" class="tabcontent">
+              <h3>Testimonials</h3>
+              <div class="testi-thumbnails">
+                <div class="thumbnail-block">
+                  <iframe src="https://player.vimeo.com/video/645191086?h=aeca7eeec2" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                  <div class="testi-title">Going Green</div>
+                </div>
+                <div class="thumbnail-block">
+                  <iframe src="https://player.vimeo.com/video/645190975?h=b29a3f2b15" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                  <div class="testi-title">Going Green</div>
+                </div>
+                <div class="thumbnail-block">
+                  <iframe src="https://player.vimeo.com/video/645190881?h=9d6ca321f7" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                  <div class="testi-title">Customer Support</div>
+                </div>
+                <div class="thumbnail-block">
+                  <iframe src="https://player.vimeo.com/video/645190819?h=2fa04f4067" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                  <div class="testi-title">Environmental Impact</div>
+                </div>
+                <div class="thumbnail-block">
+                  <iframe src="https://player.vimeo.com/video/645190711?h=4c76415738" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                  <div class="testi-title">Net Metering</div>
+                </div>
+                <div class="thumbnail-block">
+                  <iframe src="https://player.vimeo.com/video/645190397?h=15bbc73d80" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                  <div class="testi-title">Incentives</div>
+                </div>
+                <div class="thumbnail-block">
+                  <iframe src="https://player.vimeo.com/video/645190501?h=3fa5c56ebe" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                  <div class="testi-title">Savings</div>
+                </div>
+                <div class="thumbnail-block">
+                  <iframe src="https://player.vimeo.com/video/645190287?h=d2d6f1ae38" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                  <div class="testi-title">New Roof</div>
+                </div>
+                <div class="thumbnail-block">
+                  <iframe src="https://player.vimeo.com/video/645190228?h=bf029fccd7" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                  <div class="testi-title">ITC Credit</div>
+                </div>
+                </div>
+              </div>
+              <!-- panel-group -->
+            </div>
         </div>
-        <div class="col-lg-8">
-          <div id="Tokyo1" class="tabcontent">
-            <h3>Net Metering</h3>
-            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingOne">
-                  <h4 class="panel-title">
-                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                      <p class="more-less">
-                        <img src="images/caret-01.png" class="img-responsive center-block"/>
-                      </p>
-                      What is net metering?
-                    </a>
-                  </h4>
-                </div>
-                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-                  <div class="panel-body">
-                    <p>Net metering is an electric billing tool that uses the electric grid to store excess energy produced by your solar panel system, allowing your meter to spin backwards.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingTwo">
-                  <h4 class="panel-title">
-                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                      <p class="more-less">
-                        <img src="images/caret-01.png" class="img-responsive center-block"/>
-                      </p>
-                      Will I still have an electric bill from my utility company after going solar?
-                    </a>
-                  </h4>
-                </div>
-                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                  <div class="panel-body">
-                    <p>
-                      Yes, even if your energy usage is 100% offset by going solar, you will still be connected to the grid to store your excess energy. Consider your utility company as your backup energy provider if your future needs change.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingThree">
-                  <h4 class="panel-title">
-                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                      <p class="more-less">
-                        <img src="images/caret-01.png" class="img-responsive center-block"/>
-                      </p>
-                      Do solar panels work in a blackout?
-                    </a>
-                  </h4>
-                </div>
-                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                  <div class="panel-body">
-                    <p>
-                      When the grid is turned off, pair your solar panels with a battery to provide essential backup power.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- panel-group -->
-          </div>
-          <!-- end-->
-          <div id="Tokyo2" class="tabcontent">
-            <h3>Upfront Cost</h3>
-            <div class="panel-group" id="accordion2" role="tablist" aria-multiselectable="true">
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingFour">
-                  <h4 class="panel-title">
-                    <a role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-                      <p class="more-less">
-                        <img src="images/caret-01.png" class="img-responsive center-block"/>
-                      </p>
-                      What are the upfront costs of going solar?
-                    </a>
-                  </h4>
-                </div>
-                <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-                  <div class="panel-body">
-                    <p>
-                      Zero! Your monthly payment will come after the system is fully installed.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingFive">
-                  <h4 class="panel-title">
-                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                      <p class="more-less">
-                        <img src="images/caret-01.png" class="img-responsive center-block"/>
-                      </p>
-                      How long does it take to get a return on my investment?
-                    </a>
-                  </h4>
-                </div>
-                <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                  <div class="panel-body">
-                    <p>
-                      Immediately! With our $0 out of pocket program, you should save in your very first month by redirecting the money you are already forced to pay your utility company. In addition, the longer you have solar panels, the larger your savings will be over time.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- panel-group -->
-          </div>
-          <!-- end-->
-          <div id="Tokyo3" class="tabcontent">
-            <h3>Credit</h3>
-            <div class="panel-group" id="accordion3" role="tablist" aria-multiselectable="true">
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingSix">
-                  <h4 class="panel-title">
-                    <a role="button" data-toggle="collapse" data-parent="#accordion3" href="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
-                      <p class="more-less">
-                        <img src="images/caret-01.png" class="img-responsive center-block"/>
-                      </p>
-                      If I own a solar panel system, will this affect my debt to income ratio?
-                    </a>
-                  </h4>
-                </div>
-                <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
-                  <div class="panel-body">
-                    <p>
-                      No - this is just one of the benefits of working with Sunnova! When you make on time payments, the balance will show up as zero. The only time your DTI will be affected is if your payments become delinquent.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingSeven">
-                  <h4 class="panel-title">
-                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion3" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                      <p class="more-less">
-                        <img src="images/caret-01.png" class="img-responsive center-block"/>
-                      </p>
-                      Will my credit score be affected during the approval process?
-                    </a>
-                  </h4>
-                </div>
-                <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
-                  <div class="panel-body">
-                    <p>
-                      Only soft checks are conduted the first 30 days for all programs. Only the ownership option will convert to a hard inquiry 30 days later.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- panel-group -->
-          </div>
-          <!-- end-->
-          <div id="Tokyo4" class="tabcontent">
-            <h3>Moving</h3>
-            <div class="panel-group" id="accordion4" role="tablist" aria-multiselectable="true">
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingEight">
-                  <h4 class="panel-title">
-                    <a role="button" data-toggle="collapse" data-parent="#accordion4" href="#collapseEight" aria-expanded="true" aria-controls="collapseEight">
-                      <p class="more-less">
-                        <img src="images/caret-01.png" class="img-responsive center-block"/>
-                      </p>
-                      What happens if I move?
-                    </a>
-                  </h4>
-                </div>
-                <div id="collapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">
-                  <div class="panel-body">
-                    <p>The ownership of the panels will transfer to the next homeowner. Most homeowners include the remaining balance in with the home price, or they can take over the low payments instead of paying the utilities for a higher cost of power. The longer you have the panels, the higher the utiliy's rate will be, and the more attractive your home will appear! Give us a call and we will custom fit your next home with the latest and greatest.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- panel-group -->
-          </div>
-          <!-- end-->
-          <div id="Tokyo5" class="tabcontent">
-            <h3>Warranty</h3>
-            <div class="panel-group" id="accordion5" role="tablist" aria-multiselectable="true">
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingNine">
-                  <h4 class="panel-title">
-                    <a role="button" data-toggle="collapse" data-parent="#accordion5" href="#collapseNine" aria-expanded="true" aria-controls="collapseNine">
-                      <p class="more-less">
-                        <img src="images/caret-01.png" class="img-responsive center-block"/>
-                      </p>
-                      What happens if my system stops producing?
-                    </a>
-                  </h4>
-                </div>
-                <div id="collapseNine" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingNine">
-                  <div class="panel-body">
-                    <p>
-                      Your warranty will cover any gaps in production. Warranties vary from product to product, so we are reachable at any time to go over the coverage with you.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- panel-group -->
-          </div>
-          <!-- end-->
-          <div id="Tokyo6" class="tabcontent">
-            <h3>Weather</h3>
-            <div class="panel-group" id="accordion6" role="tablist" aria-multiselectable="true">
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingTen">
-                  <h4 class="panel-title">
-                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion6" href="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
-                      <p class="more-less">
-                        <img src="images/caret-01.png" class="img-responsive center-block"/>
-                      </p>
-                      Do my solar panels produce power when the sun isn’t shining?
-                    </a>
-                  </h4>
-                </div>
-                <div id="collapseTen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTen">
-                  <div class="panel-body">
-                    <p>
-                      Just like when you don't wear sunscreen on a cloudy day, you can still get sun burned from the sun's powerful rays. Even on a cloudy day, our panels will still absorb the sun's energy. Our design software factors in historical weather patterns, guaranteeing panel performance.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingEleven">
-                  <h4 class="panel-title">
-                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion6" href="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
-                      <p class="more-less">
-                        <img src="images/caret-01.png" class="img-responsive center-block"/>
-                      </p>
-                      What happens if there is snow on solar panels?
-                    </a>
-                  </h4>
-                </div>
-                <div id="collapseEleven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEleven">
-                  <div class="panel-body">
-                    <p>
-                      Don't worry; you don't need to do a thing! The panels are durable and can hold the weight of the snow. Due to the tempered glass and energy from the panels, the snow will slide right off.
-                    </p>
-                    <img src="./images/solar-panel-snow.jpeg" alt="">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div id="Tokyo7" class="tabcontent">
-            <h3>Incentives</h3>
-            <div class="panel-group" id="accordion7" role="tablist" aria-multiselectable="true">
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingTwelve">
-                  <h4 class="panel-title">
-                    <a role="button" data-toggle="collapse" data-parent="#accordion7" href="#collapseTwelve" aria-expanded="true" aria-controls="collapseTwelve">
-                      <p class="more-less">
-                        <img src="images/caret-01.png" class="img-responsive center-block"/>
-                      </p>
-                      What are the incentives in New York?
-                    </a>
-                  </h4>
-                </div>
-                <div id="collapseTwelve" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwelve">
-                  <div class="panel-body">
-                    <p>
-                      "NY State Solar Energy System Equipment Tax Credit The 25% state solar tax credit is available for purchased home solar systems in New York. (Max. $5,000 state tax reduction) NY-Sun Megawatt (MW) Block Program Up to $1,000 for every kilowatt (kW) of solar power installed. Solar Electric Generating System Tax Abatement (SEGS) Property tax exemption on the added home value from a solar and storage system. Home Solar Project State Sales Tax Exemption 4% home solar system state sales tax exemption."
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingThirteen">
-                  <h4 class="panel-title">
-                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion7" href="#collapseThirteen" aria-expanded="false" aria-controls="collapseThirteen">
-                      <p class="more-less">
-                        <img src="images/caret-01.png" class="img-responsive center-block"/>
-                      </p>
-                      What are the incentives in New Jersey?
-                    </a>
-                  </h4>
-                </div>
-                <div id="collapseThirteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThirteen">
-                  <div class="panel-body">
-                    <p>
-                      "For every 1000 kWh your panels produce, you will earn a fixed $90 payment for 15 years (ownership option only). Your solar specialist will show you your custom home design. New Jersey residents that invest in a solar energy system will not have to pay any additional property taxes on the value that their solar panels are adding to their homes."
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingTwelve">
-                  <h4 class="panel-title">
-                    <a role="button" data-toggle="collapse" data-parent="#accordion7" href="#collapseFourteen" aria-expanded="true" aria-controls="collapseFourteen">
-                      <p class="more-less">
-                        <img src="images/caret-01.png" class="img-responsive center-block"/>
-                      </p>
-                      What are the incentives in New York City?
-                    </a>
-                  </h4>
-                </div>
-                <div id="collapseFourteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwelve">
-                  <div class="panel-body">
-                    <p>
-                      The NYC Property Tax Abatement for solar allows NYC homeowners to claim 20% of solar system costs as a property tax abatement with the NYC Department of Finance. It is divided into annual 5% installments over a four year cycle, not to exceed any one year’s property tax liability.
-                      <br><br>Be aware: the NYC PTA will only be available for projects installed through 2023.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- panel-group -->
-          </div>
-          <!-- end-->
-          <div id="Tokyo8" class="tabcontent">
-            <h3>Testimonials</h3>
-            <div class="testi-thumbnails">
-              <div class="thumbnail-block">
-                <iframe src="https://player.vimeo.com/video/645191086?h=aeca7eeec2" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-              </div>
-              <div class="thumbnail-block">
-                <iframe src="https://player.vimeo.com/video/645190975?h=b29a3f2b15" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-              </div>
-              <div class="thumbnail-block">
-                <iframe src="https://player.vimeo.com/video/645190881?h=9d6ca321f7" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-              </div>
-              <div class="thumbnail-block">
-                <iframe src="https://player.vimeo.com/video/645190819?h=2fa04f4067" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-              </div>
-              <div class="thumbnail-block">
-                <iframe src="https://player.vimeo.com/video/645190711?h=4c76415738" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-              </div>
-              <div class="thumbnail-block">
-                <iframe src="https://player.vimeo.com/video/645190501?h=3fa5c56ebe" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-              </div>
-              <div class="thumbnail-block">
-                <iframe src="https://player.vimeo.com/video/645190397?h=15bbc73d80" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-              </div>
-              <div class="thumbnail-block">
-                <iframe src="https://player.vimeo.com/video/645190287?h=d2d6f1ae38" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-              </div>
-              <div class="thumbnail-block">
-                <iframe src="https://player.vimeo.com/video/645190228?h=bf029fccd7" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-              </div>
-              </div>
-            </div>
-            <!-- panel-group -->
-          </div>
           <!-- end-->
         </div>
       </div>
