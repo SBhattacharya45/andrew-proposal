@@ -996,7 +996,7 @@ background: linear-gradient(90deg, rgba(237,32,39,1) 49%, rgba(151,28,31,1) 100%
 /*----------------------------------------------------------------*/
 
 .page13 {
-  background-image: url('images/page8bg.png');
+  background-image: url('images/solar-house.png');
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
@@ -1107,6 +1107,7 @@ background: linear-gradient(90deg, rgba(237,32,39,1) 49%, rgba(151,28,31,1) 100%
   width: 98vw;
 
 }
+
 
 .page13middle img {
   width: 165px;
@@ -1367,7 +1368,7 @@ label {
 /*------------------------  page 15   -----------------------------*/
 /*----------------------------------------------------------------*/
 .page15 {
-  background-image: url('images/page13bg.jpg');
+  background-image: url('images/solar-house\ –\ 1.png');
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
