@@ -29,12 +29,14 @@
             text-align: center;
             border-radius: 10px;
             color: green;
-            margin-bottom: 3vh;
+            margin-bottom: 1vh;
         }
 
-        .partners-subtext{
+        .partners-subtext {
             text-align: center;
-            font-size: 1.2vw;
+            font-size: 1vw;
+            margin-bottom: 3vh;
+            font-family: 'Poppins-light';
         }
 
         .partners-block {
@@ -91,7 +93,7 @@
 
         /* for new design */
 
-        .partners-block-2 {
+        /* .partners-block-2 {
             position: relative;
             font-family: 'Poppins-light';
         }
@@ -210,6 +212,190 @@
             rotate: -14deg;
             top: 11.1vw;
             left: 57.5vw;
+        } */
+
+        /* for redesign */
+        .pt-section-wrapper {
+            position: relative;
+            font-family: 'Poppins-light';
+        }
+
+        .pt-circle-container {
+            --num-colors: 5;
+            --color-size: calc(100% / var(--num-colors));
+            background: conic-gradient(#51a447 calc(0 * var(--color-size)) calc(1 * var(--color-size)),
+                    #d9ad51 calc(1 * var(--color-size)) calc(2 * var(--color-size)),
+                    #65a3da calc(2 * var(--color-size)) calc(3 * var(--color-size)),
+                    #e2d561 calc(3 * var(--color-size)) calc(4 * var(--color-size)),
+                    #a7e9d8 calc(4 * var(--color-size)) calc(5 * var(--color-size)));
+            height: 58vh;
+            width: 58vh;
+            border-radius: 50%;
+            position: absolute;
+            top: 11vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            left: 20vw;
+        }
+
+        .pt-circle {
+            background: #fefefe;
+            height: 90%;
+            width: 90%;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-flow: column;
+            gap: 10px;
+        }
+
+        .pt-circle-top {
+            font-size: 2.2vw;
+            font-weight: bold;
+            font-family: 'BebasNeue';
+        }
+
+        .pt-circle-line {
+            height: 5px;
+            width: 80%;
+            background: linear-gradient(to right,  #51a447 0%,#51a447 20%,  #d9ad51  20%,#d9ad51  40%,  #65a3da 40%,#65a3da 60%,  #e2d561 60%,#e2d561 80%,#a7e9d8 80%,#a7e9d8 100%);
+        }
+
+        .pt-circle-bottom {
+            width: 40%;
+            margin-top: 1.7vh;
+        }
+
+        .pt-circle-bottom > img {
+            width: 100%;
+        }
+
+        .pt-block {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pt-img {
+            height: 12vh;
+            width: 12vh;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pt-img>img {
+            width: 65%;
+        }
+
+        .pt-data {
+            display: flex;
+            flex-flow: column;
+            gap: 10px;
+        }
+
+        .pt-heading {
+            font-size: 1.1vw;
+            font-weight: bold;
+        }
+
+
+        .pt-logos {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .logo-img-block {
+            height: 3vh;
+            max-width: 100%;
+        }
+
+        img.logo-img {
+            height: 100%;
+            max-width: 100%;
+        }
+
+        #manu-block {
+            display: flex;
+            gap: 10px;
+            position: absolute;
+            left: 50vw;
+        }
+
+        #manu-block .pt-img {
+            border: 7px solid #51a447;
+        }
+
+        #manu-block .pt-heading {
+            color: #51a447;
+        }
+
+        #install-block {
+            display: flex;
+            gap: 10px;
+            position: absolute;
+            left: 53vw;
+            top: 16vh;
+        }
+
+        #install-block .pt-img {
+            border: 7px solid #d9ad51;
+        }
+
+        #install-block .pt-heading {
+            color: #d9ad51;
+        }
+
+        #moni-block {
+            display: flex;
+            gap: 10px;
+            position: absolute;
+            left: 55vw;
+            top: 32vh;
+        }
+
+        #moni-block .pt-img {
+            border: 7px solid #65a3da;
+        }
+
+        #moni-block .pt-heading {
+            color: #65a3da;
+        }
+
+        #fin-block {
+            display: flex;
+            gap: 10px;
+            position: absolute;
+            left: 53vw;
+            top: 48vh;
+        }
+
+        #fin-block .pt-img {
+            border: 7px solid #e2d561;
+        }
+
+        #fin-block .pt-heading {
+            color: #e2d561;
+        }
+
+        #war-block {
+            display: flex;
+            gap: 10px;
+            position: absolute;
+            left: 50vw;
+            top: 64vh;
+        }
+
+        #war-block .pt-img {
+            border: 7px solid #a7e9d8;
+        }
+
+        #war-block .pt-heading {
+            color: #a7e9d8;
         }
     </style>
 </head>
@@ -247,15 +433,15 @@
                         <div class="nav-block-text">About Sunlife</div>
                     </div>
                     <div class="nav-block" onclick="navigateTo('sunlife-mission')">
-                      <div class="nav-block-img" style="background-image: url('./images/mission-bg.png')"></div>
-                      <div class="nav-block-text">Sunlife Mission</div>
+                        <div class="nav-block-img" style="background-image: url('./images/mission-bg.png')"></div>
+                        <div class="nav-block-text">Sunlife Mission</div>
                     </div>
                 </div>
                 <div id="nav-second-row" class="nav-row">
-                  <div class="nav-block active-nav-block">
-                      <div class="nav-block-img" style="background-image: url('./images/partners-bg.png')"></div>
-                      <div class="nav-block-text">Our Partners</div>
-                  </div>
+                    <div class="nav-block active-nav-block">
+                        <div class="nav-block-img" style="background-image: url('./images/partners-bg.png')"></div>
+                        <div class="nav-block-text">Our Partners</div>
+                    </div>
                     <div class="nav-block" onclick="navigateTo('household')">
                         <div class="nav-block-img" style="background-image: url('./images/pg4-bg.jpg')"></div>
                         <div class="nav-block-text">Household Names</div>
@@ -303,17 +489,17 @@
                         <div class="nav-block-text">Next Steps</div>
                     </div>
                 </div>
-              </div>
+            </div>
         </div>
     </div>
     <div class="container-fluid partner-page sunslide">
         <div class="row">
             <div class="col-lg-12">
                 <h2>Our Partners</h2>
-                <p class="partners-subtext">SunLife is a regional solar 
-consulting firm that partners with local solar industry experts.</p>
+                <p class="partners-subtext">SunLife is a regional solar consulting firm that partners with local solar
+                    industry experts.</p>
             </div>
-            <div class="col-lg-12">
+            <!-- <div class="col-lg-12">
                 <div class="col-lg-12">
                     <div class="partners-block" style="display: none;">
                         <div id="man-col">
@@ -526,6 +712,99 @@ consulting firm that partners with local solar industry experts.</p>
                                     <img src="./images/partner-logo/sunnova.png" alt="" class="logo-img">
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <div class="col-lg-12 pt-section-wrapper">
+                <div class="pt-circle-container">
+                    <div class="pt-circle">
+                        <div class="pt-circle-top">OUR PARTNERS, YOUR PRODUCTS</div>
+                        <div class="pt-circle-line"></div>
+                        <div class="pt-circle-bottom">
+                            <img src="./images/sunlife-logo.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-block" id="manu-block">
+                    <div class="pt-img">
+                        <img src="./images/partner-logo/manu-icon-transformed.png" alt="">
+                    </div>
+                    <div class="pt-data">
+                        <div class="pt-heading">Manufacturing</div>
+                        <div class="pt-logos">
+                            <div class="logo-img-block"><img src="./images/partner-logo/sunpower.png" alt=""
+                                    class="logo-img"></div>
+                            <div class="logo-img-block"><img style="height: 5vh;" src="./images/partner-logo/aptos.png"
+                                    alt="" class="logo-img"></div>
+                            <div class="logo-img-block"><img src="./images/partner-logo/qcells.png" alt=""
+                                    class="logo-img"></div>
+                            <div class="logo-img-block"><img src="./images/partner-logo/rec.png" alt=""
+                                    class="logo-img"></div>
+                            <div class="logo-img-block"><img src="./images/partner-logo/jasolar.png" alt=""
+                                    class="logo-img"></div>
+                            <div class="logo-img-block"><img src="./images/partner-logo/canadiansolar.png" alt=""
+                                    class="logo-img"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-block" id="install-block">
+                    <div class="pt-img">
+                        <img src="./images/partner-logo/install-icon.png" alt="">
+                    </div>
+                    <div class="pt-data">
+                        <div class="pt-heading">Installation</div>
+                        <div class="pt-logos">
+                            <div class="logo-img-block"><img style="height: 5vh;" src="./images/partner-logo/hytech.png"
+                                    alt="" class="logo-img"></div>
+                            <div class="logo-img-block"><img style="height: 5vh;" src="./images/partner-logo/lunex.png"
+                                    alt="" class="logo-img"></div>
+                            <div class="logo-img-block"><img style="height: 5vh;"
+                                    src="./images/partner-logo/skyline.png" alt="" class="logo-img"></div>
+                            <div class="logo-img-block"><img style="height: 5vh;"
+                                    src="./images/partner-logo/infinity.png" alt="" class="logo-img"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-block" id="moni-block">
+                    <div class="pt-img">
+                        <img src="./images/partner-logo/moni-icon.png" alt="">
+                    </div>
+                    <div class="pt-data">
+                        <div class="pt-heading">Monitoring</div>
+                        <div class="pt-logos">
+                            <div class="logo-img-block"><img src="./images/partner-logo/solaredge.png" alt=""
+                                    class="logo-img"></div>
+                            <div class="logo-img-block"><img src="./images/partner-logo/enphase.png" alt=""
+                                    class="logo-img"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-block" id="fin-block">
+                    <div class="pt-img">
+                        <img src="./images/partner-logo/fin-icon.png" alt="">
+                    </div>
+                    <div class="pt-data">
+                        <div class="pt-heading">Finance</div>
+                        <div class="pt-logos">
+                            <div class="logo-img-block"><img style="height: 5vh;" src="./images/partner-logo/tcu.png"
+                                    alt="" class="logo-img"></div>
+                            <div class="logo-img-block"><img style="height: 5vh;" src="./images/partner-logo/mosaic.png"
+                                    alt="" class="logo-img"></div>
+                            <div class="logo-img-block"><img src="./images/partner-logo/sunnova.png" alt=""
+                                    class="logo-img"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-block" id="war-block">
+                    <div class="pt-img">
+                        <img src="./images/partner-logo/war-icon.png" alt="">
+                    </div>
+                    <div class="pt-data">
+                        <div class="pt-heading">Warranty</div>
+                        <div class="pt-logos">
+                            <div class="logo-img-block"><img src="./images/partner-logo/sunnova.png" alt=""
+                                    class="logo-img"></div>
                         </div>
                     </div>
                 </div>
