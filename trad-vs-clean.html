@@ -195,11 +195,7 @@
       font-weight: bold;
     }
 
-    #solar-annual {
-      color: #db4437;
-    }
-
-    #solar-annual.savings-green {
+    #solar-savings {
       color: #00dc81;
     }
 
@@ -437,8 +433,12 @@
             <div class="slider-data-value" id="solar-month-pay">$ 0</div>
           </div>
           <div class="slider-data-block">
+            <div class="slider-data-label">Annual Payment</div>
+            <div class="slider-data-value" id="solar-annual">$ 23,571</div>
+          </div>
+          <div class="slider-data-block">
             <div class="slider-data-label">Your Savings</div>
-            <div class="slider-data-value savings-green" id="solar-annual">$ 23,571</div>
+            <div class="slider-data-value savings-green" id="solar-savings">$ 23,571</div>
           </div>
         </div>
       </div>
@@ -636,20 +636,27 @@
 
   // setup for chart slider
   const labels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30];
-  const dataArray = [-75, -70, -65, -60, -55, -50, -45, -40, -35, -30, -25, -20, -15, -10, -5, 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70];
+  // const dataArray = [-75, -70, -65, -60, -55, -50, -45, -40, -35, -30, -25, -20, -15, -10, -5, 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70];
 
   const tradPayArr = [200, 208, 216.32, 224.97, 233.97, 243.33, 253.06, 263.19, 273.71, 284.66, 296.05, 307.89, 320.21, 333.01, 346.34, 360.19, 374.6, 389.58, 405.16, 421.37, 438.22, 455.75, 473.98, 492.94, 512.66, 533.17, 554.49, 576.67, 599.74, 623.73];
   const monthPayArr = [160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 20, 20, 20, 20, 20, 20];
   const tradAnnualArr = [2400, 2496, 2595.84, 2699.67, 2807.66, 2919.97, 3036.77, 3158.24, 3284.57, 3415.95, 3552.59, 3694.69, 3842.48, 3996.18, 4156.02, 4322.26, 4495.15, 4674.96, 4861.96, 5056.44, 5258.7, 5469.04, 5687.81, 5915.32, 6151.93, 6398.01, 6653.93, 6920.08, 7196.89, 7484.76];
   const solarAnnualArr = [1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 240, 240, 240, 240, 240, 240];
-  $('#trad-month-pay').html('$ ' + tradPayArr[dataArray.length - 1]);
-  $('#trad-annual').html('$ ' + tradAnnualArr[dataArray.length - 1]);
-  $('#solar-annual').html('$ ' + solarAnnualArr[dataArray.length - 1]);
-  $('#solar-month-pay').html('$ ' + monthPayArr[dataArray.length - 1]);
+  const dataArray = []; // for savings
+  for(var i = 0; i < labels.length; i++ ) {
+    dataArray.push(Math.round((tradAnnualArr[i] - solarAnnualArr[i]) * 100) / 100);
+  }
+
+
+  $('#trad-month-pay').html('$ ' + tradPayArr[labels.length - 1]);
+  $('#trad-annual').html('$ ' + tradAnnualArr[labels.length - 1]);
+  $('#solar-annual').html('$ ' + solarAnnualArr[labels.length - 1]);
+  $('#solar-month-pay').html('$ ' + monthPayArr[labels.length - 1]);
+  $('#solar-savings').html('$ ' + dataArray[labels.length - 1]);
   const data = {
     labels,
     datasets: [{
-      label: 'Weekly Sales',
+      label: 'Savings',
       data: dataArray,
       borderColor: 'white',
       borderWidth: 0,
@@ -672,7 +679,7 @@
           display: false,
         },
         tooltip: {
-          enabled: false,
+          enabled: true,
         }
       },
       scales: {
@@ -697,11 +704,13 @@
     $('#trad-month-pay').html('$ ' + tradPayArr[range.value - 1]);
     $('#trad-annual').html('$ ' + tradAnnualArr[range.value - 1]);
     $('#solar-month-pay').html('$ ' + monthPayArr[range.value - 1]);
-    if (solarAnnualArr[range.value - 1] > 0) {
-      $('#solar-annual').html('$ ' + solarAnnualArr[range.value - 1]).addClass('savings-green');
-    } else {
-      $('#solar-annual').html('$ ' + solarAnnualArr[range.value - 1]).removeClass('savings-green');
-    }
+    $('#solar-annual').html('$ ' + solarAnnualArr[range.value - 1]);
+    $('#solar-savings').html('$ ' + dataArray[range.value - 1])
+    // if (dataArray[range.value - 1] > 0) {
+    //   $('#solar-savings').html('$ ' + dataArray[range.value - 1]).addClass('savings-green');
+    // } else {
+    //   $('#solar-savings').html('$ ' + dataArray[range.value - 1]).removeClass('savings-green');
+    // }
     myChart.config.data.datasets[0].data = rangedvalue;
     myChart.update();
   }
