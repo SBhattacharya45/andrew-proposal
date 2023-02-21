@@ -137,7 +137,7 @@
     }
 
     .slider-dialogue {
-      display: flex;
+      display: none;
       flex-flow: column;
       margin-top: 20px;
       background: #fff;
@@ -148,6 +148,10 @@
       font-family: Poppins-Light;
     }
 
+    .active-slider-dialogue {
+      display: flex;
+    }
+
     .slider-container {
       display: flex;
       justify-content: space-between;
@@ -155,16 +159,16 @@
     }
 
     .slider-title {
-       font-size: 18px;
-       display: flex;
-       align-items: center;
-       justify-content: space-between;
-       padding: 0 20px;
-       font-size: 1.2vw
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      font-size: 1.2vw
     }
 
     .slider-x {
-      
+
       font-size: 18px;
       color: #878787;
     }
@@ -183,15 +187,27 @@
     }
 
     .slider-data-label {
-      color: var(--dark);
+      color: grey;
       font-weight: bold;
       margin-bottom: 7px;
       text-align: center;
-      font-size: 1vw;
+      font-size: 0.9vw;
+    }
+
+    .slider-btn {
+      border-radius: 10px;
+      border: 0;
+      padding: 7px 0;
+      width: 5vw;
+    }
+
+    .active-slider-btn {
+      color: #fff;
+      background: #306fb8;
     }
 
     .slider-data-value {
-      font-size: 1.5vw;
+      font-size: 1.3vw;
       font-weight: bold;
     }
 
@@ -202,6 +218,20 @@
     #trad-month-pay,
     #trad-annual {
       color: #db4437
+    }
+
+    .slider-switcher {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    #solar-0-save {
+      color: #00dc81;
+    }
+
+    #solar-29-save {
+      color: #3c8dbc;
     }
 
     /* for chart slider */
@@ -392,12 +422,16 @@
     </div>
   </div>
   <div id="chart-overlay">
-    <div class="slider-dialogue">
+    <div class="slider-dialogue active-slider-dialogue" id="loan-slider">
       <div class="slider-title">
         <div>Estimated Electricity Charges Over Time</div>
         <div class="slider-x" onclick="closeChartPopup()">
           <i class="fa-solid fa-x"></i>
         </div>
+      </div>
+      <div class="slider-switcher">
+        <button class="slider-btn active-slider-btn">Loan</button>
+        <button class="slider-btn" onclick="swapCharts('lease')">Lease</button>
       </div>
       <div class="slider-container">
         <div class="slider-data">
@@ -443,112 +477,185 @@
         </div>
       </div>
     </div>
+    <div id="lease-slider" class="slider-dialogue">
+      <div class="slider-title">
+        <div>Estimated Electricity Charges Over Time</div>
+        <div class="slider-x" onclick="closeChartPopup()">
+          <i class="fa-solid fa-x"></i>
+        </div>
+      </div>
+      <div class="slider-switcher">
+        <button class="slider-btn" onclick="swapCharts('loan')">Loan</button>
+        <button class="slider-btn active-slider-btn">Lease</button>
+      </div>
+      <div class="slider-container">
+        <div class="slider-data">
+          <div class="slider-data-heading">
+            <i class="fa-solid fa-utility-pole-double" style="color: #db4437;"></i>
+            <div>Traditional</div>
+          </div>
+          <div class="slider-data-block">
+            <div class="slider-data-label">Monthly Payment</div>
+            <div class="slider-data-value" id="trad-month-pay2">$ 191</div>
+          </div>
+          <div class="slider-data-block">
+            <div class="slider-data-label">Annual Payment</div>
+            <div class="slider-data-value" id="trad-annual2">$ 37,198</div>
+          </div>
+        </div>
+        <div class="chart-slider-container">
+          <div style="width: 100%;">
+            <canvas id="lease-slider-chart"></canvas>
+          </div>
+          <div>
+            <input type="range" name="slider" id="chart-range" max="25" min="1" value="25" oninput="updatechart2(this)">
+          </div>
+          <div class="chart-scale"></div>
+        </div>
+        <div class="slider-data">
+          <div class="slider-data-heading">
+            <i class="fa-solid fa-brightness" style="color: #f4b70a;"></i>
+            <div>Solar</div>
+          </div>
+          <div class="slider-data-block">
+            <div class="slider-data-label">Monthly Payment 0% Escalator</div>
+            <div class="slider-data-value" id="solar-0-month">$ 0</div>
+          </div>
+          <div class="slider-data-block">
+            <div class="slider-data-label">Annual Payment</div>
+            <div class="slider-data-value" id="solar-0-annual">$ 23,571</div>
+          </div>
+          <div class="slider-data-block">
+            <div class="slider-data-label">Savings</div>
+            <div class="slider-data-value" id="solar-0-save">$ 23,571</div>
+          </div>
+          <div class="slider-data-block">
+            <div class="slider-data-label">Monthly Payment 2.9% Escalator</div>
+            <div class="slider-data-value" id="solar-29-month">$ 0</div>
+          </div>
+          <div class="slider-data-block">
+            <div class="slider-data-label">Annual Payment</div>
+            <div class="slider-data-value" id="solar-29-annual">$ 23,571</div>
+          </div>
+          <div class="slider-data-block">
+            <div class="slider-data-label">Savings</div>
+            <div class="slider-data-value" id="solar-29-save">$ 23,571</div>
+          </div>
+          <!-- <div class="slider-data-block">
+            <div class="slider-data-label">Your Savings</div>
+            <div class="slider-data-value savings-green" id="solar-savings2">$ 23,571</div>
+          </div> -->
+        </div>
+      </div>
+    </div>
   </div>
   <div class="container-fluid page8 sunslide">
-      <div class="row">
-        <div class="col-lg-12 page8mainheading">
-          <h2>which would you choose?</h2>
-          <p >Choose one of the options to see the trend over the years:</p>
+    <div class="row">
+      <div class="col-lg-12 page8mainheading">
+        <h2>which would you choose?</h2>
+        <p>Choose one of the options to see the trend over the years:</p>
+      </div>
+      <div class="col-lg-6 page8left">
+        <div class="">
+          <video autoplay muted loop id="myVideo">
+            <source src="images/dirty_energy.mov" type="video/mp4">
+            <source src="images/dirty_energy.mov" type="video/ogg">
+            Your browser does not support the video tag.
+          </video>
         </div>
-        <div class="col-lg-6 page8left">
-          <div class="">
-            <video autoplay muted loop id="myVideo">
-              <source src="images/dirty_energy.mov" type="video/mp4">
-              <source src="images/dirty_energy.mov" type="video/ogg">
-              Your browser does not support the video tag.
-            </video>
+        <div class="col-lg-12">
+          <h2>Traditional Power</h2>
+        </div>
+        <div class="col-lg-12 page8leftmiddle">
+          <div class="col-lg-5"></div>
+          <div class="col-lg-2">
           </div>
-          <div class="col-lg-12">
-            <h2>Traditional Power</h2>
-          </div>
-          <div class="col-lg-12 page8leftmiddle">
-            <div class="col-lg-5"></div>
-            <div class="col-lg-2">
-            </div>
-            <div class="col-lg-5"></div>
-          </div>
-          <div class="col-lg-12 page8leftbottom">
-            <div class="col-lg-2"></div>
-            <div class="col-lg-8">
-              <a href="#" onclick="openChartPopup()">
+          <div class="col-lg-5"></div>
+        </div>
+        <div class="col-lg-12 page8leftbottom">
+          <div class="col-lg-2"></div>
+          <div class="col-lg-8">
+            <a href="#" onclick="openChartPopup()">
               <img src="images/p8left.png" class="img-responsive center-block" />
-              </a>
-            </div>
-            <div class="col-lg-2"></div>
+            </a>
           </div>
+          <div class="col-lg-2"></div>
         </div>
-        <div class="col-lg-6 page8right">
-          <div class="col-lg-12">
-            <h2>CLEAN ENERGY</h2>
+      </div>
+      <div class="col-lg-6 page8right">
+        <div class="col-lg-12">
+          <h2>CLEAN ENERGY</h2>
+        </div>
+        <div class="col-lg-12 page8leftmiddle">
+          <div class="col-lg-5"></div>
+          <div class="col-lg-2">
           </div>
-          <div class="col-lg-12 page8leftmiddle">
-            <div class="col-lg-5"></div>
-            <div class="col-lg-2">
-            </div>
-            <div class="col-lg-5"></div>
-          </div>
-          <div class="col-lg-12 page8rightbottom">
-            <div class="col-lg-2"></div>
-            <div class="col-lg-8">
-              <a href="#" data-toggle="modal" data-target="#char1" data-dismiss="modal" id="p2">
+          <div class="col-lg-5"></div>
+        </div>
+        <div class="col-lg-12 page8rightbottom">
+          <div class="col-lg-2"></div>
+          <div class="col-lg-8">
+            <a href="#" data-toggle="modal" data-target="#char1" data-dismiss="modal" id="p2">
               <img src="images/p8right.png" class="img-responsive center-block" />
-              </a>
-            </div>
-            <div class="col-lg-2"></div>
+            </a>
           </div>
+          <div class="col-lg-2"></div>
         </div>
-        <div class="modal fade" id="char1" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <span><h3>Estimated Electricity Charges Over Time</h3></span>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      </div>
+      <!-- <div class="modal fade" id="char1" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <span>
+                <h3>Estimated Electricity Charges Over Time</h3>
+              </span>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="" style="text-align: center; background: #fff;">
-                <div class="line-chart col-lg-12">
-                  <div class="aspect-ratio">
-                    <canvas id="chart1"></canvas>
-                  </div>
-                </div>
-                <p>For a $200/month electric bill with a 4% inflation rate</p>
-                <div>
-                  <button class="tradButton" onclick="swapCharts('trad')">Traditional Energy</button>
-                  <button class="cleanButton" onclick="swapCharts('clean')">Clean Energy</button>
+              </button>
+            </div>
+            <div class="" style="text-align: center; background: #fff;">
+              <div class="line-chart col-lg-12">
+                <div class="aspect-ratio">
+                  <canvas id="chart1"></canvas>
                 </div>
               </div>
-              <div class="modal-footer">
+              <p>For a $200/month electric bill with a 4% inflation rate</p>
+              <div>
+                <button class="tradButton" onclick="swapCharts('trad')">Traditional Energy</button>
+                <button class="cleanButton" onclick="swapCharts('clean')">Clean Energy</button>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="modal fade" id="char2" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <span>
-                  <h4>Estimated Electricity Charges Over Time</h4>
-                </span>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="">
-                <div class="line-chart col-lg-12">
-                  <div class="aspect-ratio">
-                    <canvas id="chart2"></canvas>
-                  </div>
-                </div>
-                <p>For a $200/month electric bill with a 4% inflation rate</p>
-              </div>
-              <div class="modal-footer">
-              </div>
+            <div class="modal-footer">
             </div>
           </div>
         </div>
       </div>
+      <div class="modal fade" id="char2" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <span>
+                <h4>Estimated Electricity Charges Over Time</h4>
+              </span>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="">
+              <div class="line-chart col-lg-12">
+                <div class="aspect-ratio">
+                  <canvas id="chart2"></canvas>
+                </div>
+              </div>
+              <p>For a $200/month electric bill with a 4% inflation rate</p>
+            </div>
+            <div class="modal-footer">
+            </div>
+          </div>
+        </div>
+      </div> -->
     </div>
+  </div>
   <!-- <div class="container">
     <h2>Which Would You Choose?</h2>
     <div class="tvs-container">
@@ -627,12 +734,12 @@
   </div>
 </body>
 <script>
-  $("#p1").click(function () {
-    swapCharts('trad');
-  });
-  $("#p2").click(function () {
-    swapCharts('clean');
-  });
+  // $("#p1").click(function () {
+  //   swapCharts('trad');
+  // });
+  // $("#p2").click(function () {
+  //   swapCharts('clean');
+  // });
 
   // setup for chart slider
   const labels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30];
@@ -643,7 +750,7 @@
   const tradAnnualArr = [2400, 2496, 2595.84, 2699.67, 2807.66, 2919.97, 3036.77, 3158.24, 3284.57, 3415.95, 3552.59, 3694.69, 3842.48, 3996.18, 4156.02, 4322.26, 4495.15, 4674.96, 4861.96, 5056.44, 5258.7, 5469.04, 5687.81, 5915.32, 6151.93, 6398.01, 6653.93, 6920.08, 7196.89, 7484.76];
   const solarAnnualArr = [1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 1920, 240, 240, 240, 240, 240, 240];
   const dataArray = []; // for savings
-  for(var i = 0; i < labels.length; i++ ) {
+  for (var i = 0; i < labels.length; i++) {
     dataArray.push(Math.round((tradAnnualArr[i] - solarAnnualArr[i]) * 100) / 100);
   }
 
@@ -653,7 +760,7 @@
   $('#solar-annual').html('$ ' + solarAnnualArr[labels.length - 1]);
   $('#solar-month-pay').html('$ ' + monthPayArr[labels.length - 1]);
   $('#solar-savings').html('$ ' + dataArray[labels.length - 1]);
-  const data = {
+  const loanChartData = {
     labels,
     datasets: [{
       label: 'Savings',
@@ -670,9 +777,9 @@
   };
 
   // config 
-  const config = {
+  const loanConfig = {
     type: 'line',
-    data,
+    data: loanChartData,
     options: {
       plugins: {
         legend: {
@@ -691,15 +798,15 @@
       }
     }
   };
-  const myChart = new Chart(
+  const loanChart = new Chart(
     document.getElementById('slider-chart'),
-    config
+    loanConfig
   );
 
   function updatechart(range) {
     console.log(range.value);
     // const rangedvalue = labels.slice(0, range.value);
-    // myChart.config.data.labels = rangedvalue;
+    // loanChart.config.data.labels = rangedvalue;
     const rangedvalue = dataArray.slice(0, range.value);
     $('#trad-month-pay').html('$ ' + tradPayArr[range.value - 1]);
     $('#trad-annual').html('$ ' + tradAnnualArr[range.value - 1]);
@@ -711,8 +818,139 @@
     // } else {
     //   $('#solar-savings').html('$ ' + dataArray[range.value - 1]).removeClass('savings-green');
     // }
-    myChart.config.data.datasets[0].data = rangedvalue;
-    myChart.update();
+    loanChart.config.data.datasets[0].data = rangedvalue;
+    loanChart.update();
+  }
+
+  function updatechart(range) {
+    console.log(range.value);
+    // const rangedvalue = labels.slice(0, range.value);
+    // leaseChart.config.data.labels = rangedvalue;
+    const rangedvalue = dataArray.slice(0, range.value);
+    $('#trad-month-pay').html('$ ' + tradPayArr[range.value - 1]);
+    $('#trad-annual').html('$ ' + tradAnnualArr[range.value - 1]);
+    $('#solar-month-pay').html('$ ' + monthPayArr[range.value - 1]);
+    $('#solar-annual').html('$ ' + solarAnnualArr[range.value - 1]);
+    $('#solar-savings').html('$ ' + dataArray[range.value - 1])
+    loanChart.config.data.datasets[0].data = rangedvalue;
+    loanChart.update();
+  }
+
+  // for lease chart slider
+
+  const labels2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25,];
+  // const dataArray2 = [-75, -70, -65, -60, -55, -50, -45, -40, -35, -30, -25, -20, -15, -10, -5, 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70];
+
+  const tradPayArr2 = [200, 208, 216.32, 224.97, 233.97, 243.33, 253.06, 263.19, 273.71, 284.66, 296.05, 307.89, 320.21, 333.01, 346.34, 360.19, 374.6, 389.58, 405.16, 421.37, 438.22, 455.75, 473.98, 492.94, 512.66,];
+  const tradAnnualArr2 = [2400, 2496, 2595.84, 2699.67, 2807.66, 2919.97, 3036.77, 3158.24, 3284.57, 3415.95, 3552.59, 3694.69, 3842.48, 3996.18, 4156.02, 4322.26, 4495.15, 4674.96, 4861.96, 5056.44, 5258.7, 5469.04, 5687.81, 5915.32, 6151.93,];
+
+  const solar0Month = [190, 190, 190, 190, 190, 190, 190, 190, 190, 190, 190, 190, 190, 190, 190, 190, 190, 190, 190, 190, 190, 190, 190, 190, 190,];
+  const solar0Annual = [2280, 2280, 2280, 2280, 2280, 2280, 2280, 2280, 2280, 2280, 2280, 2280, 2280, 2280, 2280, 2280, 2280, 2280, 2280, 2280, 2280, 2280, 2280, 2280, 2280,];
+
+  const solar29Month = [160, 164.64, 169.41, 174.33, 179.38, 184.59, 189.94, 195.45, 201.11, 206.95, 212.95, 219.12, 225.48, 232.02, 238.75, 245.67, 252.79, 260.12, 267.67, 275.43, 283.42, 291.64, 300.09, 308.8, 317.75];
+  const solar29Annual = [1920, 1975.68, 2032.97, 2091.93, 2152.6, 2215.02, 2279.26, 2345.36, 2413.37, 2483.36, 2555.38, 2629.48, 2705.74, 2784.2, 2864.95, 2948.03, 3033.52, 3121.49, 3212.02, 3305.17, 3401.02, 3499.65, 3601.14, 3705.57, 3813.03];
+
+  const dataArrayAt0 = []; // for 0% escalator
+  for (var i = 0; i < labels2.length; i++) {
+    dataArrayAt0.push(Math.round((tradAnnualArr2[i] - solar0Annual[i]) * 100) / 100);
+  }
+  const dataArrayAt29 = []; // for 2.9% escalator
+  for (var i = 0; i < labels2.length; i++) {
+    dataArrayAt29.push(Math.round((tradAnnualArr2[i] - solar29Annual[i]) * 100) / 100);
+  }
+
+
+  $('#trad-month-pay2').html('$ ' + tradPayArr2[labels2.length - 1]);
+  $('#trad-annual2').html('$ ' + tradAnnualArr2[labels2.length - 1]);
+  $('#solar-0-month').html('$ ' + solar0Month[labels2.length - 1]);
+  $('#solar-0-annual').html('$ ' + solar0Annual[labels2.length - 1]);
+  $('#solar-29-month').html('$ ' + solar29Month[labels2.length - 1]);
+  $('#solar-29-annual').html('$ ' + solar29Annual[labels2.length - 1]);
+  $('#solar-0-save').html('$ ' + dataArrayAt0[labels2.length - 1]);
+  $('#solar-29-save').html('$ ' + dataArrayAt29[labels2.length - 1]);
+  const leaseChartData = {
+    labels: labels2,
+    datasets: [
+      {
+        label: 'Savings at 2.9% Escalator',
+        data: dataArrayAt29,
+        borderColor: '#3c8dbc',
+        borderWidth: 3,
+        fill: {
+          target: 'origin',
+          above: '#3c8dbc55',
+          below: '#db4437'
+        },
+        tension: 0.4
+      }, {
+        label: 'Savings at 0% Escalator',
+        data: dataArrayAt0,
+        borderColor: '#00dc81',
+        borderWidth: 3,
+        fill: {
+          target: 'origin',
+          above: '#00DC8155',
+          below: '#db4437'
+        },
+        tension: 0.4
+      },]
+  };
+
+  // config 
+  const leaseConfig = {
+    type: 'line',
+    data: leaseChartData,
+    options: {
+      plugins: {
+        legend: {
+          display: true,
+          position: 'bottom',
+        },
+        tooltip: {
+          enabled: true,
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          display: false,
+          suggestedMax: dataArrayAt0[dataArrayAt0.length - 1],
+        }
+      }
+    }
+  };
+  const leaseChart = new Chart(
+    document.getElementById('lease-slider-chart'),
+    leaseConfig
+  );
+
+  function updatechart2(range) {
+    // console.log(range.value);
+    // const rangedvalue = labels.slice(0, range.value);
+    // leaseChart.config.data.labels = rangedvalue;
+    const rangedvalue0 = dataArrayAt0.slice(0, range.value);
+    const rangedvalue29 = dataArrayAt29.slice(0, range.value);
+    $('#trad-month-pay2').html('$ ' + tradPayArr[range.value - 1]);
+    $('#trad-annual2').html('$ ' + tradAnnualArr[range.value - 1]);
+    $('#solar-0-month').html('$ ' + solar0Month[range.value - 1]);
+    $('#solar-0-annual').html('$ ' + solar0Annual[range.value - 1]);
+    $('#solar-29-month').html('$ ' + solar29Month[range.value - 1]);
+    $('#solar-29-annual').html('$ ' + solar29Annual[range.value - 1]);
+    $('#solar-0-save').html('$ ' + dataArrayAt0[range.value - 1]);
+    $('#solar-29-save').html('$ ' + dataArrayAt29[range.value - 1]);
+    leaseChart.config.data.datasets[0].data = rangedvalue29;
+    leaseChart.config.data.datasets[1].data = rangedvalue0;
+    leaseChart.update();
+  }
+
+  function swapCharts(chart_id) {
+    if (chart_id === 'lease') {
+      $('.active-slider-dialogue').removeClass('active-slider-dialogue');
+      $('#lease-slider').addClass('active-slider-dialogue');
+    } else if (chart_id === 'loan') {
+      $('.active-slider-dialogue').removeClass('active-slider-dialogue');
+      $('#loan-slider').addClass('active-slider-dialogue');
+    }
   }
 </script>
 <script src="js/chart.js"></script>

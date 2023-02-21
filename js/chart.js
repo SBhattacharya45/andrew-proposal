@@ -154,26 +154,3 @@ var chartInstance = new Chart(chart, {
 //     data: data,
 //     options: options
 // });
-
-
-function swapCharts(chart_id) {
-  if (chart_id === 'trad') {
-    $('.active-chart-btn').removeClass('active-chart-btn');
-    $('.tradButton').addClass('active-chart-btn');
-    chartInstance.destroy();
-    chartInstance = new Chart(chart, {
-      type: 'line',
-      data: tradData,
-      options: options
-    });
-  } else if (chart_id === 'clean') {
-    $('.active-chart-btn').removeClass('active-chart-btn');
-    $('.cleanButton').addClass('active-chart-btn');
-    chartInstance.destroy();
-    chartInstance = new Chart(chart, {
-      type: 'line',
-      data: cleanData,
-      options: options
-    });
-  }
-}
