@@ -237,7 +237,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            left: 15vw;
+            left: 21vw;
         }
 
         .pt-circle {
@@ -261,7 +261,7 @@
         .pt-circle-line {
             height: 5px;
             width: 80%;
-            background: linear-gradient(to right,  #51a447 0%,#51a447 20%,  #d9ad51  20%,#d9ad51  40%,  #65a3da 40%,#65a3da 60%,  #e2d561 60%,#e2d561 80%,#a7e9d8 80%,#a7e9d8 100%);
+            background: linear-gradient(to right, #51a447 0%, #51a447 20%, #d9ad51 20%, #d9ad51 40%, #65a3da 40%, #65a3da 60%, #e2d561 60%, #e2d561 80%, #a7e9d8 80%, #a7e9d8 100%);
         }
 
         .pt-circle-bottom {
@@ -269,7 +269,7 @@
             margin-top: 1.7vh;
         }
 
-        .pt-circle-bottom > img {
+        .pt-circle-bottom>img {
             width: 100%;
         }
 
@@ -299,10 +299,14 @@
         }
 
         .pt-heading {
-            font-size: 1.1vw;
+            font-size: 1.3vw;
             font-weight: bold;
         }
 
+        .pt-txt {
+            font-size: 1.5vw;
+            font-weight: bold;
+        }
 
         .pt-logos {
             display: flex;
@@ -324,7 +328,7 @@
             display: flex;
             gap: 10px;
             position: absolute;
-            left: 40vw;
+            left: 46vw;
         }
 
         #manu-block .pt-img {
@@ -339,7 +343,7 @@
             display: flex;
             gap: 10px;
             position: absolute;
-            left: 46vw;
+            left: 52vw;
             top: 18vh;
         }
 
@@ -355,7 +359,7 @@
             display: flex;
             gap: 10px;
             position: absolute;
-            left: 48vw;
+            left: 54vw;
             top: 38vh;
         }
 
@@ -371,7 +375,7 @@
             display: flex;
             gap: 10px;
             position: absolute;
-            left: 46vw;
+            left: 52vw;
             top: 58vh;
         }
 
@@ -387,7 +391,7 @@
             display: flex;
             gap: 10px;
             position: absolute;
-            left: 40vw;
+            left: 46vw;
             top: 78vh;
         }
 
@@ -397,6 +401,21 @@
 
         #war-block .pt-heading {
             color: #a7e9d8;
+        }
+
+        #war-block .pt-txt {
+            display: flex;
+            align-items: center;
+            height: 4.3vh;
+        }
+
+        .warranty-badge {
+            width: 4vw;
+            margin-left: 0.3vw;
+        }
+
+        .warranty-badge>img {
+            width: 100%;
         }
     </style>
 </head>
@@ -414,7 +433,7 @@
             <div class="nav-content">
                 <div id="nav-first-row" class="nav-row">
                     <div class="nav-block" onclick="navigateTo('index')">
-                        <div class="nav-block-img" style="background-image: url('./images/pg1-bg.jpg')"></div>
+                        <div class="nav-block-img" style="background-image: url('./images/pg1-bg-2.png')"></div>
                         <div class="nav-block-text">Welcome to SunLife</div>
                     </div>
                     <div class="nav-block" onclick="navigateTo('agenda')">
@@ -426,7 +445,7 @@
                         <div class="nav-block-text">Today's Discovery</div>
                     </div>
                     <div class="nav-block" onclick="navigateTo('program-comp')">
-                        <div class="nav-block-img" style="background-image: url('./images/prog-comp-bg.png')"></div>
+                        <div class="nav-block-img" style="background-image: url('./images/prog-comp-bg-2.png')"></div>
                         <div class="nav-block-text">Program Comparision</div>
                     </div>
                     <div class="nav-block" onclick="navigateTo('about-sunlife')">
@@ -434,13 +453,13 @@
                         <div class="nav-block-text">About Sunlife</div>
                     </div>
                     <div class="nav-block" onclick="navigateTo('sunlife-mission')">
-                        <div class="nav-block-img" style="background-image: url('./images/mission-bg.png')"></div>
+                        <div class="nav-block-img" style="background-image: url('./images/mission-bg-2.png')"></div>
                         <div class="nav-block-text">Sunlife Mission</div>
                     </div>
                 </div>
                 <div id="nav-second-row" class="nav-row">
                     <div class="nav-block active-nav-block">
-                        <div class="nav-block-img" style="background-image: url('./images/partners-bg.png')"></div>
+                        <div class="nav-block-img" style="background-image: url('./images/partners-bg-2.png')"></div>
                         <div class="nav-block-text">Our Partners</div>
                     </div>
                     <div class="nav-block" onclick="navigateTo('household')">
@@ -720,7 +739,7 @@
             <div class="col-lg-12 pt-section-wrapper">
                 <div class="pt-circle-container">
                     <div class="pt-circle">
-                        <div class="pt-circle-top">OUR PARTNERS, YOUR PRODUCTS</div>
+                        <div class="pt-circle-top">THE SUNLIFE EXPERIENCE</div>
                         <div class="pt-circle-line"></div>
                         <div class="pt-circle-bottom">
                             <img src="./images/sunlife-logo.png" alt="">
@@ -733,7 +752,8 @@
                     </div>
                     <div class="pt-data">
                         <div class="pt-heading">Manufacturing</div>
-                        <div class="pt-logos">
+                        <div class="pt-txt">Quality Tier 1 Options</div>
+                        <!-- <div class="pt-logos">
                             <div class="logo-img-block"><img src="./images/partner-logo/sunpower.png" alt=""
                                     class="logo-img"></div>
                             <div class="logo-img-block"><img style="height: 5vh;" src="./images/partner-logo/aptos.png"
@@ -746,7 +766,7 @@
                                     class="logo-img"></div>
                             <div class="logo-img-block"><img src="./images/partner-logo/canadiansolar.png" alt=""
                                     class="logo-img"></div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="pt-block" id="install-block">
@@ -755,7 +775,8 @@
                     </div>
                     <div class="pt-data">
                         <div class="pt-heading">Installation</div>
-                        <div class="pt-logos">
+                        <div class="pt-txt">Nation-wide</div>
+                        <!-- <div class="pt-logos">
                             <div class="logo-img-block"><img style="height: 5vh;" src="./images/partner-logo/hytech.png"
                                     alt="" class="logo-img"></div>
                             <div class="logo-img-block"><img style="height: 5vh;" src="./images/partner-logo/lunex.png"
@@ -764,7 +785,7 @@
                                     src="./images/partner-logo/skyline.png" alt="" class="logo-img"></div>
                             <div class="logo-img-block"><img style="height: 5vh;"
                                     src="./images/partner-logo/infinity.png" alt="" class="logo-img"></div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="pt-block" id="moni-block">
@@ -773,12 +794,13 @@
                     </div>
                     <div class="pt-data">
                         <div class="pt-heading">Monitoring</div>
-                        <div class="pt-logos">
+                        <div class="pt-txt">Mobile 24/7</div>
+                        <!-- <div class="pt-logos">
                             <div class="logo-img-block"><img src="./images/partner-logo/solaredge.png" alt=""
                                     class="logo-img"></div>
                             <div class="logo-img-block"><img src="./images/partner-logo/enphase.png" alt=""
                                     class="logo-img"></div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="pt-block" id="fin-block">
@@ -787,14 +809,15 @@
                     </div>
                     <div class="pt-data">
                         <div class="pt-heading">Finance</div>
-                        <div class="pt-logos">
+                        <div class="pt-txt">Flexible</div>
+                        <!-- <div class="pt-logos">
                             <div class="logo-img-block"><img style="height: 5vh;" src="./images/partner-logo/tcu.png"
                                     alt="" class="logo-img"></div>
                             <div class="logo-img-block"><img style="height: 5vh;" src="./images/partner-logo/mosaic.png"
                                     alt="" class="logo-img"></div>
                             <div class="logo-img-block"><img src="./images/partner-logo/sunnova.png" alt=""
                                     class="logo-img"></div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="pt-block" id="war-block">
@@ -803,10 +826,13 @@
                     </div>
                     <div class="pt-data">
                         <div class="pt-heading">Warranty</div>
-                        <div class="pt-logos">
+                        <div class="pt-txt">25-year best in class <div class="warranty-badge"><img
+                                    src="./images/table.png" alt=""></div>
+                        </div>
+                        <!-- <div class="pt-logos">
                             <div class="logo-img-block"><img src="./images/partner-logo/sunnova.png" alt=""
                                     class="logo-img"></div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
