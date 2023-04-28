@@ -9,6 +9,93 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="style.css">
+
+    <style>
+      div#London {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 20px;
+      }
+
+      div#Paris {
+        justify-content: space-between;
+        margin-top: 20px;
+      }
+      div#Tokyo {
+        justify-content: center;
+        gap: 2vw;
+        margin-top: 20px;
+      }
+
+      div#London > .progress-img-block {
+          width: 15%;
+          display: flex;
+          flex-flow: column;
+          align-items: center;
+      }
+      div#Paris > .progress-img-block {
+          width: 11%;
+          display: flex;
+          flex-flow: column;
+          align-items: center;
+      }
+      div#Tokyo > .progress-img-block {
+          width: 11%;
+          display: flex;
+          flex-flow: column;
+          align-items: center;
+      }
+
+      div#London > li.progress-time-block {
+          font-weight: bold;
+          margin-top: 16.5vh;
+          font-size: 0.9vw;
+      }
+      div#Paris > li.progress-time-block {
+          font-weight: bold;
+          margin-top: 16.5vh;
+          font-size: 0.9vw;
+      }
+      div#Tokyo > li.progress-time-block {
+          font-weight: bold;
+          margin-top: 16.5vh;
+          font-size: 0.9vw;
+      }
+
+      #London img {
+        height: 19vh;
+        width: 11vw;
+        margin: 0;
+      }
+
+      #London p {
+        text-align: center;
+        margin-top: 0;
+      }
+
+      #Paris img {
+        height: 19vh;
+        width: 11vw;
+        margin: 0;
+        max-width: 100%;
+      }
+
+      #Paris p {
+        text-align: center;
+        margin-top: 0;
+      }
+      #Tokyo img {
+        height: 19vh;
+        width: 11vw;
+        margin: 0;
+        max-width: 100%;
+      }
+
+      #Tokyo p {
+        text-align: center;
+        margin-top: 0;
+      }
+    </style>
   </head>
   <body>
     <div id="overlay" onclick="closeOverlay()">
@@ -118,76 +205,87 @@
           <div class="col-lg-5"></div>
         </div>
         <div class="col-lg-12 page13middle tabcontent active" id="London">
-          <li>
-            <img src="images/SiteSurvey.png" class="center-block" />
+          <li class="progress-img-block">
+            <img src="images/p13images-06.png" class="center-block" />
             <h3 class="p13h2">Site Survey</h3>
             <p>An experienced technician conducts a thorough review of your home to finalize any technical requirements.</p>
           </li>
-          <li>
-            <img src="images/Permitting.png" class="center-block" />
+          <li class="progress-time-block">1 - 2 Weeks</li>
+          <li class="progress-img-block">
+            <img src="images/p13images-05.png" class="center-block" />
             <h3 class="p13h3">Permitting</h3>
             <p>The appropriate permits are completed and filed, and submitted to the relevant housing authorities for approval.</p>
           </li>
-          <li>
-            <img src="images/Installation.png" class="center-block" />
+          <li class="progress-time-block">4 - 10 Weeks</li>
+          <li class="progress-img-block">
+            <img src="images/p13images-04.png" class="center-block" />
             <h3 class="p13h4">Installation</h3>
             <p>The installation will not take more than a few hours, but will save your family money for years to come.</p>
           </li>
-          <li>
-            <img src="images/Inspection.png" class="center-block" />
+          <li class="progress-time-block">1 - 2 Weeks</li>
+          <li class="progress-img-block">
+            <img src="images/p13images-03.png" class="center-block" />
             <h3 class="p13h5">Inspection</h3>
             <p>After the system is installed it must be properly inspected before the system can be turned on.</p>
           </li>
-          <li>
-            <img src="images/PTO.png" class="center-block" />
+          <li class="progress-time-block">1 - 2 Weeks</li>
+          <li class="progress-img-block">
+            <img src="images/p13images-02.png" class="center-block" />
             <h3 class="p13h6">PTO</h3>
             <p>The Permission to Operate phase is the final authorization for the solar system to be turned on and begin generating electricity.</p>
           </li>
         </div>
         <div class="col-lg-12 page13middle tabcontent" id="Paris">
-          <li>
+          <li class="progress-img-block">
             <img src="images/p13images-06.png" class="center-block" />
             <h3 class="p13h2">Site Survey</h3>
             <p>An experienced technician conducts a thorough review of your home to finalize any technical requirements.</p>
           </li>
-          <li>
+          <li class="progress-time-block">1 - 2 Weeks</li>
+          <li class="progress-img-block">
             <img src="images/p13images-05.png" class="center-block" />
             <h3 class="p13h3">Permitting</h3>
             <p>The appropriate permits are completed and filed, and submitted to the relevant housing authorities for approval.</p>
           </li>
-          <li>
+          <li class="progress-time-block">1 - 2 Weeks</li>
+          <li class="progress-img-block">
             <img src="images/p13roofinginstallation.png" class="center-block" />
-            <h3 class="p13h3">Roof Installation</h3>
+            <h3 class="p13h3" style="color: #04344B;">Roof Installation</h3>
             <p>Your new roof will be installed and inspected prior to adding your new solar panels.</p>
           </li>
-          <li>
+          <li class="progress-time-block">4 - 10 Weeks</li>
+          <li class="progress-img-block">
             <img src="images/p13images-04.png" class="center-block" />
             <h3 class="p13h4">Installation</h3>
             <p>The installation will not take more than a few hours, but will save your family money for years to come.</p>
           </li>
-          <li>
+          <li class="progress-time-block">1 - 2 Weeks</li>
+          <li class="progress-img-block">
             <img src="images/p13images-03.png" class="center-block" />
             <h3 class="p13h5">Inspection</h3>
             <p>After the system is installed it must be properly inspected before the system can be turned on.</p>
           </li>
-          <li>
+          <li class="progress-time-block">1 - 2 Weeks</li>
+          <li class="progress-img-block">
             <img src="images/p13images-02.png" class="center-block" />
             <h3 class="p13h6">PTO</h3>
             <p>The Permission to Operate phase is the final authorization for the solar system to be turned on and begin generating electricity.</p>
           </li>
         </div>
         <div class="col-lg-12 page13middle tabcontent" id="Tokyo">
-          <li>
+          <li class="progress-img-block">
             <img src="images/p13images-06.png" class="center-block" />
             <h3 class="p13h2">Site Survey</h3>
             <p>An experienced technician conducts a thorough review of your home to finalize any technical requirements.</p>
           </li>
-          <li>
+          <li class="progress-time-block">60 - 90 Days</li>
+          <li class="progress-img-block">
             <img src="images/p13images-04.png" class="center-block" />
             <h3 class="p13h4">Installation</h3>
             <p>The installation will not take more than a few hours, but will save your family money for years to come.</p>
           </li>
-          <li>
+          <li class="progress-time-block">30 - 60 Days</li>
+          <li class="progress-img-block">
             <img src="images/p13images-03.png" class="center-block" />
             <h3 class="p13h5">Inspection</h3>
             <p>After the system is installed it must be properly inspected before the system can be turned on.</p>
@@ -242,7 +340,7 @@
     for (i = 0; i < tablinks.length; i++) {
       tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
-    document.getElementById(cityName).style.display = "block";
+    document.getElementById(cityName).style.display = "flex";
     evt.currentTarget.className += " active";
     }
   </script>

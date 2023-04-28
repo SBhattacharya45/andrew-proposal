@@ -10,6 +10,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="style.css">
+    <style>
+      .nmss-container {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 4vh 0;
+          margin-top: 20px;
+      }
+      .nmss-block > img {
+          max-height: 32vw;
+      }
+      .nmss-block {
+          width: 25%;
+      }
+    </style>
   </head>
   <body>
     <div id="overlay" onclick="closeOverlay()">
@@ -153,7 +167,7 @@
           <div class="col-lg-10" style="width: calc(100% - 8vw);">
             <div id="Tokyo1" class="tabcontent">
               <h3>Net Metering</h3>
-              <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+              <div class="net-meter-faq" class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                 <div class="panel panel-default">
                   <div class="panel-heading" role="tab" id="headingOne">
                     <h4 class="panel-title">
@@ -205,6 +219,45 @@
                     <div class="panel-body">
                       <p>
                         When the grid is turned off, pair your solar panels with a battery to provide essential backup power.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="netMeter5">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#netMeter5Collapse" aria-expanded="false" aria-controls="collapseThree">
+                        <p class="more-less">
+                          <img src="images/caret-01.png" class="img-responsive center-block"/>
+                        </p>
+                        Can you show me a real example of how net metering works?
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="netMeter5Collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="netMeter5">
+                    <div class="panel-body">
+                      <p>
+                        My SunPower. 425w x 54 panels Maxeon. 22.95 kw system making 29kw
+                        <div class="nmss-container">
+                          <div class="nmss-block">
+                            <img src="./images/nmss1.jpg" alt="">
+                          </div>
+                          <div class="nmss-block">
+                            <img src="./images/nmss2.jpg" alt="">
+                          </div>
+                          <div class="nmss-block">
+                            <img src="./images/nmss3.jpg" alt="">
+                          </div>
+                          <div class="nmss-block">
+                            <img src="./images/nmss4.jpg" alt="">
+                          </div>
+                          <div class="nmss-block">
+                            <img src="./images/nmss5.jpg" alt="">
+                          </div>
+                          <div class="nmss-block">
+                            <img src="./images/nmss6.jpg" alt="">
+                          </div>
+                        </div>
                       </p>
                     </div>
                   </div>
@@ -464,44 +517,67 @@
             <!-- end-->
             <div id="Tokyo8" class="tabcontent">
               <h3>Testimonials</h3>
-              <div class="testi-thumbnails">
-                <div class="thumbnail-block">
-                  <iframe src="https://player.vimeo.com/video/645191086?h=aeca7eeec2" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                  <div class="testi-title">Going Green</div>
-                </div>
-                <div class="thumbnail-block">
-                  <iframe src="https://player.vimeo.com/video/645190975?h=b29a3f2b15" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                  <div class="testi-title">Going Green</div>
-                </div>
-                <div class="thumbnail-block">
-                  <iframe src="https://player.vimeo.com/video/645190881?h=9d6ca321f7" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                  <div class="testi-title">Customer Support</div>
-                </div>
-                <div class="thumbnail-block">
-                  <iframe src="https://player.vimeo.com/video/645190819?h=2fa04f4067" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                  <div class="testi-title">Environmental Impact</div>
-                </div>
-                <div class="thumbnail-block">
-                  <iframe src="https://player.vimeo.com/video/645190711?h=4c76415738" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                  <div class="testi-title">Net Metering</div>
-                </div>
-                <div class="thumbnail-block">
-                  <iframe src="https://player.vimeo.com/video/645190397?h=15bbc73d80" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                  <div class="testi-title">Incentives</div>
-                </div>
-                <div class="thumbnail-block">
-                  <iframe src="https://player.vimeo.com/video/645190501?h=3fa5c56ebe" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                  <div class="testi-title">Savings</div>
-                </div>
-                <div class="thumbnail-block">
-                  <iframe src="https://player.vimeo.com/video/645190287?h=d2d6f1ae38" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                  <div class="testi-title">New Roof</div>
-                </div>
-                <div class="thumbnail-block">
-                  <iframe src="https://player.vimeo.com/video/645190228?h=bf029fccd7" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                  <div class="testi-title">ITC Credit</div>
-                </div>
-                </div>
+              <div class="testi-scroll">
+                <div class="testi-thumbnails">
+                  <div class="thumbnail-block">
+                    <iframe src="https://player.vimeo.com/video/645191086?h=aeca7eeec2" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    <div class="testi-title">Going Green</div>
+                  </div>
+                  <div class="thumbnail-block">
+                    <iframe src="https://player.vimeo.com/video/645190975?h=b29a3f2b15" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    <div class="testi-title">Going Green</div>
+                  </div>
+                  <div class="thumbnail-block">
+                    <iframe src="https://player.vimeo.com/video/645190881?h=9d6ca321f7" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    <div class="testi-title">Customer Support</div>
+                  </div>
+                  <div class="thumbnail-block">
+                    <iframe src="https://player.vimeo.com/video/645190819?h=2fa04f4067" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    <div class="testi-title">Environmental Impact</div>
+                  </div>
+                  <div class="thumbnail-block">
+                    <iframe src="https://player.vimeo.com/video/645190711?h=4c76415738" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    <div class="testi-title">Net Metering</div>
+                  </div>
+                  <div class="thumbnail-block">
+                    <iframe src="https://player.vimeo.com/video/645190397?h=15bbc73d80" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    <div class="testi-title">Incentives</div>
+                  </div>
+                  <div class="thumbnail-block">
+                    <iframe src="https://player.vimeo.com/video/645190501?h=3fa5c56ebe" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    <div class="testi-title">Savings</div>
+                  </div>
+                  <div class="thumbnail-block">
+                    <iframe src="https://player.vimeo.com/video/645190287?h=d2d6f1ae38" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    <div class="testi-title">New Roof</div>
+                  </div>
+                  <div class="thumbnail-block">
+                    <iframe src="https://player.vimeo.com/video/645190228?h=bf029fccd7" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    <div class="testi-title">ITC Credit</div>
+                  </div>
+                  </div>
+                  <div style="margin-top: 50px;" class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="installMap">
+                      <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#installMapCollapse" aria-expanded="false" aria-controls="collapseThree">
+                          <p class="more-less">
+                            <img src="images/caret-01.png" class="img-responsive center-block"/>
+                          </p>
+                          Do you have any installations in our area?
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="installMapCollapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="installMap">
+                      <div class="panel-body" style="height: fit-content;">
+                        <p>
+                          SunLife's installation map
+                          <br><br>
+                          <iframe src="https://www.google.com/maps/d/embed?mid=1IY8vpWAVBK97fX8jy52hT5I7t1_lNBA&ehbc=2E312F" width="640" height="480"></iframe>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
               </div>
               <!-- panel-group -->
             </div>

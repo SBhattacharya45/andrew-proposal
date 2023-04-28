@@ -964,6 +964,11 @@ background: linear-gradient(90deg, rgba(237,32,39,1) 49%, rgba(151,28,31,1) 100%
   margin-bottom: 21px;
 }
 
+div.net-meter-faq {
+  height: 67vh;
+  overflow-y: auto;
+}
+
 .panel-default>.panel-heading {
   padding: 0;
   border-radius: 0;
@@ -1078,7 +1083,7 @@ background: linear-gradient(90deg, rgba(237,32,39,1) 49%, rgba(151,28,31,1) 100%
 }
 
 #London img {
-  width: 260px;
+  width: 165px;
   margin-top: 30px;
 }
 .page13ul{
@@ -1126,11 +1131,11 @@ background: linear-gradient(90deg, rgba(237,32,39,1) 49%, rgba(151,28,31,1) 100%
 }
 
 .p13h2 {
-  color: #F08521;
+  color: #3DB54A;
 }
 
 .p13h3 {
-  color: #04344B;
+  color: #F08521;
 }
 
 .p13h4 {
@@ -1565,13 +1570,15 @@ label {
 }
 
 /* for testimonial thumbnails */
+.testi-scroll {
+  height: 65vh;
+  overflow-y: auto;
+}
 .testi-thumbnails {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 8vh 0;
-  height: 65vh;
-  overflow-y: auto;
 }
 .thumbnail-block > iframe {
   height: 100%;
